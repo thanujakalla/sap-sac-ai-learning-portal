@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SAP Analytics Cloud for absolute beginners — 14-day story lessons, RetailCo case study, official SAP docs, and AI prompts. Unified portal for v1 and v2.">
+  <title>SAP Analytics Cloud Learning Portal | Beginner Track</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Portal styles (includes CSV data-source cards and column mapping tables) -->
+  <link rel="stylesheet" href="css/sac-portal.css?v=20260607">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="SAP SAC Beginner Learning Portal">
+        <div class="brand-logo" aria-hidden="true">SAC</div>
+        <div class="brand-text">
+          <h1>SAP Analytics Cloud</h1>
+          <span id="brandSub">Learning Portal · Absolute Beginner Track</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <!-- Version badge inserted by v2-enhancements.js if v2_ui_enabled -->
+        <span class="header-progress" id="headerProgress">0 / 14 days</span>
+        <a class="header-link" href="index.html">All tracks</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero hero-compact" id="top">
+    <div class="hero-inner hero-compact-inner">
+      <div class="hero-compact-main">
+        <h2 id="heroTitle">Learn SAP Analytics Cloud from zero — story by story, with RetailCo</h2>
+        <p id="heroDesc" class="hero-compact-desc">14-day roadmap · RetailCo India case study · official SAP docs · AI prompts when stuck</p>
+        <div class="hero-progress-row">
+          <div class="progress-bar-wrap hero-progress-bar">
+            <div class="progress-bar-fill" id="heroProgressBar" style="width:0%"></div>
+          </div>
+          <span class="hero-progress-meta" id="heroProgressDetail">0 days · 0 tasks completed</span>
+        </div>
+      </div>
+      <button class="btn-continue" id="continueBtn" type="button">Continue learning →</button>
+    </div>
+  </section>
+
+  <main class="main-container">
+
+    <nav class="nav-bar nav-primary" aria-label="Portal sections">
+      <button class="nav-btn active" data-view="case" type="button" aria-controls="view-case" aria-current="page">Case Study</button>
+      <button class="nav-btn" data-view="learn" type="button" aria-controls="view-learn">Learn</button>
+      <button class="nav-btn" data-view="reference" type="button" aria-controls="view-reference">Reference</button>
+      <button class="nav-btn" data-view="journal" type="button" aria-controls="view-journal">Journal</button>
+    </nav>
+
+    <section class="view active" id="view-case" aria-labelledby="case-heading">
+      <h2 id="case-heading" class="view-title">RetailCo India — your practice company</h2>
+      <p class="view-lead">Every lesson uses this same fictional FMCG company so concepts stick. You are <strong>Mona</strong>, the SAC analyst — meet the team, download the <strong>RetailCo CSV files</strong> from Reference, then use <strong>Start building</strong> to open Day 1.</p>
+      <div id="caseStudyContent"></div>
+      <div class="case-study-cta">
+        <div class="case-study-cta-text">
+          <strong>Ready to build in SAC?</strong>
+          <p>Start the 14-day learning path — story lessons, hands-on tasks, and official SAP docs.</p>
+        </div>
+        <button class="btn-start-building" id="startBuildingBtn" type="button">Start building →</button>
+      </div>
+    </section>
+
+    <section class="view" id="view-learn" aria-labelledby="learn-heading">
+      <h2 id="learn-heading" class="sr-only">Learning path</h2>
+
+      <div class="learning-shell">
+        <aside class="day-sidebar" id="daySidebar" aria-label="Day navigation"></aside>
+        <div class="day-workspace" id="dayWorkspace" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-reference" aria-labelledby="reference-heading">
+
+      <header class="reference-hero">
+        <div class="reference-hero-main">
+          <h2 id="reference-heading" class="reference-hero-title">Reference</h2>
+          <p class="reference-hero-lead">Setup links, RetailCo CSVs, SAC 2025–2026 guides, and official documentation — organized so you can find what you need fast.</p>
+        </div>
+        <ul class="reference-hero-pills" aria-label="Quick facts">
+          <li><span class="ref-pill ref-pill--free">₹0 to start</span></li>
+          <li><span class="ref-pill ref-pill--data">6 practice CSVs</span></li>
+          <li><span class="ref-pill ref-pill--docs">SAP-verified links</span></li>
+        </ul>
+      </header>
+
+      <nav class="reference-nav" aria-label="Jump to reference section">
+        <a href="#ref-setup" class="reference-nav-link">Setup</a>
+        <a href="#ref-ode" class="reference-nav-link">ODE nav</a>
+        <a href="#ref-geo" class="reference-nav-link">Geo maps</a>
+        <a href="#ref-data" class="reference-nav-link">CSV files</a>
+        <a href="#ref-charts" class="reference-nav-link">Charts</a>
+        <a href="#ref-resources" class="reference-nav-link">Docs</a>
+        <a href="#ref-perf" class="reference-nav-link">Performance</a>
+      </nav>
+
+      <div class="reference-stack">
+
+        <article id="ref-setup" class="reference-panel reference-panel--featured">
+          <header class="reference-panel-head">
+            <span class="reference-panel-icon" aria-hidden="true">🚀</span>
+            <div class="reference-panel-titles">
+              <h3 class="reference-panel-title">Get started free</h3>
+              <p class="reference-panel-desc">Everything below is free for the first 14 days.</p>
+            </div>
+          </header>
+          <div class="reference-panel-body">
+            <div id="setupCardsGrid" class="setup-cards-grid"></div>
+            <div class="reference-callout reference-callout--tip">
+              <strong>Day 1 checklist</strong>
+              <p>Create sap.com account → SAC 30-day trial → learning.sap.com account → bookmark help.sap.com/docs/SAP_ANALYTICS_CLOUD.</p>
+            </div>
+          </div>
+        </article>
+
+        <details id="ref-ode" class="reference-panel reference-panel--details">
+          <summary class="reference-panel-summary">
+            <span class="reference-panel-icon" aria-hidden="true">🧭</span>
+            <span class="reference-panel-summary-text">
+              <span class="reference-panel-title">SAC 2025–2026 navigation (ODE)</span>
+              <span class="reference-panel-desc">Menu paths, story panels, and new features</span>
+            </span>
+          </summary>
+          <div class="reference-panel-body" id="odeNavigationGuide"></div>
+        </details>
+
+        <details id="ref-geo" class="reference-panel reference-panel--details">
+          <summary class="reference-panel-summary">
+            <span class="reference-panel-icon" aria-hidden="true">🗺️</span>
+            <span class="reference-panel-summary-text">
+              <span class="reference-panel-title">Geo enrichment &amp; choropleth maps</span>
+              <span class="reference-panel-desc">Coordinates, area names, and RetailCo map paths</span>
+            </span>
+          </summary>
+          <div class="reference-panel-body" id="geoEnrichmentGuide"></div>
+        </details>
+
+        <article id="ref-data" class="reference-panel reference-panel--featured reference-panel--data">
+          <header class="reference-panel-head">
+            <span class="reference-panel-icon" aria-hidden="true">📊</span>
+            <div class="reference-panel-titles">
+              <h3 class="reference-panel-title">RetailCo data files (CSV)</h3>
+              <p class="reference-panel-desc">Download and import on the days listed in each hands-on lesson.</p>
+            </div>
+            <span class="reference-panel-badge">Required</span>
+          </header>
+          <div class="reference-panel-body" id="dataSourcesLibrary"></div>
+        </article>
+
+        <details id="ref-charts" class="reference-panel reference-panel--details">
+          <summary class="reference-panel-summary">
+            <span class="reference-panel-icon" aria-hidden="true">📈</span>
+            <span class="reference-panel-summary-text">
+              <span class="reference-panel-title">Stories, charts &amp; models</span>
+              <span class="reference-panel-desc">Which widget fits which RetailCo question</span>
+            </span>
+          </summary>
+          <div class="reference-panel-body" id="chartStoryGuide"></div>
+        </details>
+
+        <article id="ref-resources" class="reference-panel">
+          <header class="reference-panel-head">
+            <span class="reference-panel-icon" aria-hidden="true">📚</span>
+            <div class="reference-panel-titles">
+              <h3 class="reference-panel-title">Official resource library</h3>
+              <p class="reference-panel-desc">Verified SAP documentation — use Help Portal search with each day's hint.</p>
+            </div>
+          </header>
+          <div class="reference-panel-body reference-panel-body--resources" id="resourceLibrary"></div>
+        </article>
+
+        <details id="ref-perf" class="reference-panel reference-panel--details reference-panel--muted">
+          <summary class="reference-panel-summary">
+            <span class="reference-panel-icon" aria-hidden="true">⚡</span>
+            <span class="reference-panel-summary-text">
+              <span class="reference-panel-title">Performance tips</span>
+              <span class="reference-panel-desc">Day 14 preview — model and story best practices</span>
+            </span>
+            <span class="reference-panel-badge reference-panel-badge--muted">Day 14</span>
+          </summary>
+          <div class="reference-panel-body">
+            <div class="perf-cards-grid" id="perfGuide"></div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section class="view" id="view-journal" aria-labelledby="journal-heading">
+      <h2 id="journal-heading" class="view-title">Learning journal</h2>
+      <p class="view-lead">Write like a diary — what made sense, what confused you, questions for your mentor. Saves automatically in your browser.</p>
+      <label class="sr-only" for="globalNotes">Learning journal notes</label>
+      <textarea class="notes-area" id="globalNotes" placeholder="Dear journal, today I learned that SAC is..."></textarea>
+      <div class="notes-actions">
+        <button class="save-note-btn" id="saveGlobalNotes" type="button">Save journal</button>
+        <span class="note-saved" id="globalNotesSaved">Saved to browser</span>
+      </div>
+      <div class="info-card">
+        <h3>When you are stuck</h3>
+        <ul>
+          <li>Use the <strong>SAC AI Tutor</strong> button for portal help, or copy a ready-made prompt from each day's Ask AI tab</li>
+          <li>Start with: "I'm a complete beginner learning SAP Analytics Cloud. Please explain simply."</li>
+          <li>Save helpful AI answers here or in that day's notes tab</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>SAP Analytics Cloud Learning Portal · Unified v1/v2 portal with feature flags</p>
+    <p class="footer-links"><a href="index.html">All tracks</a> · <a href="https://help.sap.com/docs/SAP_ANALYTICS_CLOUD" target="_blank" rel="noopener noreferrer">help.sap.com</a></p>
+  </footer>
+
+  <!-- Shared config/API boundary -->
+  <script src="js/modules/core/api-client.js?v=20260607"></script>
+  <script src="js/modules/core/feature-flags-loader.js?v=20260607"></script>
+
+  <!-- V2 portal content and data -->
+  <script src="js/sac-links-v2.js"></script>
+  <script src="js/data-beginner-v2.js"></script>
+  <script src="js/beginner-extras-v2.js"></script>
+  <script src="js/retailco-data-v2.js"></script>
+  <script src="js/geo-enrichment-guide.js"></script>
+  <script src="js/hands-on-puzzles-v2.js"></script>
+
+  <!-- Portal UI and optional feature-flagged enhancements -->
+  <script src="js/modules/features/v2-enhancements.js?v=20260607"></script>
+  <script src="js/sac-portal-v2.js?v=20260607"></script>
+  <script>
+    Promise.all([
+      window.appApiClient?.init(),
+      window.FeatureFlagsLoader?.init()
+    ]).then(async () => {
+      window.V2Enhancements?.init();
+
+      const chatbotConfig = await window.appApiClient?.getChatbotConfig();
+      if (!chatbotConfig?.enabled || !window.FeatureFlagsLoader?.isEnabled('ai_assistant_beta')) return;
+
+      window.CHATBOT_CONFIG = {
+        apiUrl: chatbotConfig.apiUrl,
+        userName: 'Learner',
+        maxHistory: 8
+      };
+      const script = document.createElement('script');
+      script.src = 'js/chatbot.js?v=20260607';
+      script.defer = true;
+      document.body.appendChild(script);
+    }).catch((error) => {
+      console.error('[Portal] Optional feature initialization failed:', error);
+    });
+  </script>
+
+</body>
+</html>

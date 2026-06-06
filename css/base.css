@@ -1,0 +1,138 @@
+/* SAP SAC Learning Portal — Design System Variables & Base Styles */
+
+:root {
+  /* Typography */
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Color Palette */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f6f7f9;
+  --color-background-info: #e6f1fb;
+  --color-background-success: #eaf3de;
+  --color-text-primary: #1a1d21;
+  --color-text-secondary: #5c6570;
+  --color-text-info: #0c447c;
+  --color-text-success: #27500a;
+  --color-border-primary: #378add;
+  --color-border-secondary: #c8cdd4;
+  --color-border-tertiary: #e4e7eb;
+  --color-border-info: #378add;
+
+  /* Spacing & Sizing */
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  /* SAP Brand Colors */
+  --sap-blue: #0a6ed1;
+  --sap-blue-dark: #0856aa;
+  --sap-teal: #1d9e75;
+  --sap-gold: #ef9f27;
+  --sap-purple: #7f77dd;
+
+  /* Layout */
+  --header-height: 64px;
+  --day-pin-height: 168px;
+  --max-container-width: 1280px;
+  --transition-default: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Typography Reset */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--sap-blue);
+  text-decoration: none;
+  transition: var(--transition-default);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--sap-blue);
+  outline-offset: 2px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Layout utility: centered container matching portal max width */
+.container {
+  max-width: var(--max-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}

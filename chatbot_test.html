@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot UI Test Harness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ── Portal mock styles (simulates the SAC portal page) ── -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #F3F4F6;
+      color: #111827;
+      font-size: 14px;
+    }
+
+    /* Portal mock header */
+    .portal-header {
+      background: white;
+      border-bottom: 1px solid #E5E7EB;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .portal-brand-logo {
+      width: 36px; height: 36px;
+      background: #0057A8;
+      color: white;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 12px;
+    }
+    .portal-brand-text { font-weight: 600; font-size: 14px; color: #111827; }
+    .portal-brand-sub { font-size: 11px; color: #6B7280; }
+
+    /* Hero mock */
+    .portal-hero {
+      background: linear-gradient(135deg, #0057A8 0%, #0070D2 60%, #1D9E75 100%);
+      padding: 36px 32px;
+      color: white;
+    }
+    .portal-hero h2 { margin: 0 0 8px; font-size: 22px; font-weight: 700; max-width: 560px; }
+    .portal-hero p { margin: 0; opacity: 0.8; font-size: 13px; }
+
+    /* Main content mock */
+    .portal-main { max-width: 860px; margin: 0 auto; padding: 32px 24px 200px; }
+    .portal-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid #E5E7EB;
+    }
+    .portal-card h3 { margin: 0 0 8px; font-size: 15px; }
+    .portal-card p  { margin: 0; color: #6B7280; font-size: 13px; line-height: 1.6; }
+
+    /* ── Test panel ── */
+    #test-panel {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      width: 320px;
+      height: calc(100vh - 56px);
+      background: #1E1E2E;
+      color: #CDD6F4;
+      overflow-y: auto;
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 12px;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #313244;
+    }
+    #test-panel-toggle {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      z-index: 300;
+      background: #1E1E2E;
+      color: #CDD6F4;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      transition: left 0.25s;
+    }
+    #test-panel-toggle.collapsed { left: 0; }
+    #test-panel.collapsed { transform: translateX(-100%); transition: transform 0.25s; }
+    #test-panel { transition: transform 0.25s; }
+
+    .tp-section {
+      padding: 14px 16px;
+      border-bottom: 1px solid #313244;
+    }
+    .tp-section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6C7086;
+      margin: 0 0 10px;
+    }
+    .tp-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: #313244;
+      color: #CDD6F4;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 11px;
+      line-height: 1.4;
+      transition: background 0.12s;
+    }
+    .tp-btn:hover { background: #45475A; }
+    .tp-btn:last-child { margin-bottom: 0; }
+    .tp-btn .tp-label { color: #89B4FA; font-weight: 600; display: block; margin-bottom: 2px; }
+    .tp-btn .tp-desc { color: #6C7086; font-size: 10px; }
+
+    .tp-log {
+      flex: 1;
+      padding: 12px 16px;
+      overflow-y: auto;
+    }
+    .tp-log-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6C7086;
+      margin: 0 0 10px;
+    }
+    .tp-log-entry {
+      margin-bottom: 8px;
+      padding: 6px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+    .tp-log-entry.info  { background: #1E3A5F; color: #89B4FA; }
+    .tp-log-entry.ok    { background: #1A3A2A; color: #A6E3A1; }
+    .tp-log-entry.warn  { background: #3A3020; color: #F9E2AF; }
+    .tp-log-entry.error { background: #3A1A1A; color: #F38BA8; }
+    .tp-log-time { color: #6C7086; margin-right: 4px; }
+
+    .tp-delay-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .tp-delay-row label { color: #6C7086; font-size: 10px; white-space: nowrap; }
+    .tp-delay-row input[type=range] { flex: 1; accent-color: #89B4FA; }
+    .tp-delay-row span { color: #89B4FA; font-size: 10px; min-width: 32px; }
+
+    .tp-mode-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .tp-mode-btn {
+      background: #313244;
+      color: #CDD6F4;
+      border: 1px solid #45475A;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.12s;
+    }
+    .tp-mode-btn.active { background: #89B4FA; color: #1E1E2E; border-color: #89B4FA; }
+
+    body.portal-shifted { margin-left: 320px; }
+    body.portal-shifted #test-panel-toggle { left: 320px; }
+  </style>
+
+  <!-- ── Chatbot CSS (inlined from chatbot.css) ── -->
+  <style id="chatbot-css">
+/* ─────────────────────────────────────────
+   SAP SAC AI Tutor — Chat Widget
+   ───────────────────────────────────────── */
+:root {
+  --cb-blue: #0057A8;
+  --cb-blue-mid: #0070D2;
+  --cb-blue-light: #E8F1FB;
+  --cb-green: #1D9E75;
+  --cb-green-light: #E3F5EE;
+  --cb-surface: #FFFFFF;
+  --cb-bg: #F7F8FA;
+  --cb-border: rgba(0,0,0,0.08);
+  --cb-text: #111827;
+  --cb-muted: #6B7280;
+  --cb-bubble-ai: #FFFFFF;
+  --cb-bubble-user: #E8F1FB;
+  --cb-radius: 12px;
+  --cb-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+  --cb-font: 'Inter', system-ui, sans-serif;
+  --cb-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  --cb-shadow-btn: 0 4px 12px rgba(0,87,168,0.25);
+  --cb-z: 9999;
+  --cb-w: min(400px, 92vw);
+  --cb-h: min(620px, 88vh);
+}
+
+/* FAB */
+#cb-fab {
+  position: fixed; bottom: 24px; right: 24px; z-index: var(--cb-z);
+  width: 56px; height: 56px; border-radius: 50%; border: none;
+  background: var(--cb-blue); color: white; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--cb-shadow-btn);
+  transition: transform 0.15s ease, background 0.12s ease;
+}
+#cb-fab:hover { transform: scale(1.05); background: var(--cb-blue-mid); }
+#cb-fab:active { transform: scale(0.96); }
+#cb-fab svg { transition: opacity 0.18s, transform 0.22s; }
+#cb-fab .cb-icon-open  { opacity: 1; transform: rotate(0deg) scale(1); }
+#cb-fab .cb-icon-close { opacity: 0; transform: rotate(-90deg) scale(0.7); position: absolute; }
+#cb-fab.open .cb-icon-open  { opacity: 0; transform: rotate(90deg) scale(0.7); }
+#cb-fab.open .cb-icon-close { opacity: 1; transform: rotate(0deg) scale(1); }
+#cb-badge {
+  position: absolute; top: 2px; right: 2px; width: 12px; height: 12px;
+  background: #F97316; border-radius: 50%; border: 2px solid white; display: none;
+}
+#cb-badge.show { display: block; }
+
+/* Panel */
+#cb-panel {
+  position: fixed; bottom: 92px; right: 24px;
+  width: var(--cb-w); height: var(--cb-h); max-height: 92vh;
+  background: var(--cb-surface); border-radius: 12px;
+  border: 1px solid var(--cb-border); border-top: 3px solid var(--cb-blue);
+  box-shadow: var(--cb-shadow); overflow: hidden;
+  display: flex; flex-direction: column; will-change: transform, opacity;
+  z-index: var(--cb-z); opacity: 0; transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+#cb-panel[hidden] { display: none; }
+#cb-panel.open { opacity: 1; transform: translateY(0); pointer-events: all; }
+
+/* Header */
+#cb-header {
+  background: linear-gradient(90deg, var(--cb-blue-mid), var(--cb-blue));
+  padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+  color: white; flex-shrink: 0;
+}
+#cb-header::before { display: none; }
+.cb-avatar {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 18px;
+}
+.cb-header-info { flex: 1; min-width: 0; }
+.cb-header-name { color: #fff; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cb-header-status { color: rgba(255,255,255,0.75); font-size: 11.5px; display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+.cb-status-dot { width: 6px; height: 6px; background: #4ADE80; border-radius: 50%; animation: cb-pulse 2.2s ease-in-out infinite; }
+@keyframes cb-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+.cb-header-actions { display: flex; gap: 4px; }
+.cb-hbtn {
+  width: 30px; height: 30px; border: none; background: rgba(255,255,255,0.12);
+  border-radius: 8px; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; color: rgba(255,255,255,0.9);
+  transition: background 0.15s, transform 0.12s; flex-shrink: 0;
+}
+.cb-hbtn:hover { background: rgba(255,255,255,0.22); transform: translateY(-1px); }
+
+/* Context pill */
+#cb-context-pill {
+  background: var(--cb-blue-light); border: 1px solid rgba(0,87,168,0.16);
+  border-radius: 6px; padding: 4px 10px; font-size: 11px; color: var(--cb-blue);
+  font-family: var(--cb-font); white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; max-width: 100%; margin: 10px 14px 0;
+  flex-shrink: 0; display: none;
+}
+#cb-context-pill.show { display: block; }
+
+/* Messages */
+#cb-messages {
+  flex: 1; overflow-y: auto; padding: 14px 12px;
+  display: flex; flex-direction: column; gap: 10px;
+  scroll-behavior: smooth; background: var(--cb-bg);
+}
+#cb-messages::-webkit-scrollbar { width: 6px; }
+#cb-messages::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 4px; }
+
+/* Rows */
+.cb-row { display: flex; align-items: flex-end; gap: 6px; animation: cb-slide-in 0.22s ease-out both; }
+@keyframes cb-slide-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.cb-row.user { flex-direction: row-reverse; }
+
+.cb-msg-avatar {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--cb-blue-light); border: 1px solid rgba(0,87,168,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 700; flex-shrink: 0;
+}
+.cb-row.user .cb-msg-avatar { background: var(--cb-blue); color: white; font-size: 15px; }
+
+/* Bubbles */
+.cb-bubble {
+  max-width: calc(100% - 52px); padding: 11px 14px; border-radius: 14px;
+  font-size: 13.5px; line-height: 1.6; color: var(--cb-text);
+  background: var(--cb-surface); border: 0.5px solid rgba(0,0,0,0.06);
+  word-break: break-word; box-shadow: 0 2px 8px rgba(14,30,37,0.06);
+}
+.cb-row.user .cb-bubble {
+  background: var(--cb-blue); color: #fff; border-color: transparent;
+  border-bottom-right-radius: 6px; align-self: flex-end;
+}
+.cb-row.ai .cb-bubble {
+  background: var(--cb-surface); color: var(--cb-text);
+  border-bottom-left-radius: 4px; align-self: flex-start;
+}
+
+/* Bubble text formatting */
+.cb-bubble strong { font-weight: 600; }
+.cb-bubble em { font-style: italic; }
+.cb-bubble code {
+  font-family: var(--cb-mono); font-size: 12px;
+  background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;
+}
+.cb-row.user .cb-bubble code { background: rgba(255,255,255,0.18); }
+.cb-bubble p { margin: 0 0 8px; }
+.cb-bubble p:last-child { margin-bottom: 0; }
+
+/* Section headings */
+.cb-bubble .cb-section-heading {
+  display: block; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--cb-blue); margin: 10px 0 5px;
+  padding-top: 8px; border-top: 0.5px solid rgba(0,87,168,0.12);
+}
+.cb-bubble .cb-section-heading:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+.cb-bubble ul, .cb-bubble ol { margin: 4px 0 8px 16px; padding: 0; font-size: 13.5px; }
+.cb-bubble li { margin-bottom: 5px; line-height: 1.55; }
+.cb-bubble li:last-child { margin-bottom: 0; }
+
+/* Citations */
+.cb-citations { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+.cb-cite {
+  display: inline-flex; align-items: center; gap: 4px; font-size: 11px;
+  padding: 3px 9px; border-radius: 20px; background: var(--cb-blue-light);
+  color: var(--cb-blue); font-weight: 500; border: 0.5px solid rgba(0,87,168,0.15);
+  cursor: default;
+}
+.cb-cite svg { flex-shrink: 0; }
+
+/* Timestamp */
+.cb-ts { font-size: 10.5px; color: var(--cb-muted); padding: 0 6px; text-align: right; }
+.cb-row.ai .cb-ts { text-align: left; }
+
+/* Typing indicator */
+.cb-typing-row { display: flex; align-items: flex-end; gap: 8px; animation: cb-slide-in 0.22s ease-out both; }
+.cb-typing-bubble {
+  background: var(--cb-surface); border: 0.5px solid var(--cb-border);
+  border-radius: 16px; border-bottom-left-radius: 4px;
+  padding: 12px 16px; display: flex; gap: 5px; align-items: center;
+}
+.cb-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cb-blue-mid); opacity: 0.4; animation: cb-bounce 1.3s ease-in-out infinite; }
+.cb-dot:nth-child(2) { animation-delay: 0.17s; }
+.cb-dot:nth-child(3) { animation-delay: 0.34s; }
+@keyframes cb-bounce { 0%,80%,100% { transform: translateY(0); opacity:0.4; } 40% { transform: translateY(-5px); opacity:1; } }
+
+/* Suggestion chips */
+#cb-suggestions { padding: 0 14px 10px; display: flex; gap: 6px; flex-wrap: wrap; background: var(--cb-bg); flex-shrink: 0; }
+.cb-chip {
+  font-family: var(--cb-font); font-size: 12px; padding: 6px 12px; border-radius: 20px;
+  border: 1px solid rgba(0,87,168,0.2); background: var(--cb-surface); color: var(--cb-blue);
+  cursor: pointer; white-space: nowrap; transition: background 0.14s, border-color 0.14s, transform 0.12s; font-weight: 500;
+}
+.cb-chip:hover { background: var(--cb-blue-light); border-color: rgba(0,87,168,0.35); transform: translateY(-1px); }
+.cb-chip:active { transform: translateY(0); }
+
+/* Input bar */
+#cb-footer { padding: 12px 14px 14px; background: var(--cb-surface); border-top: 0.5px solid var(--cb-border); flex-shrink: 0; }
+.cb-input-wrap {
+  display: flex; align-items: flex-end; gap: 8px; background: var(--cb-bg);
+  border: 1.5px solid var(--cb-border); border-radius: 14px;
+  padding: 8px 8px 8px 14px; transition: border-color 0.18s, box-shadow 0.18s;
+}
+.cb-input-wrap:focus-within { border-color: var(--cb-blue-mid); box-shadow: 0 0 0 3px rgba(0,112,210,0.1); background: var(--cb-surface); }
+#cb-input {
+  flex: 1; border: none; background: transparent; font-family: var(--cb-font);
+  font-size: 13.5px; color: var(--cb-text); resize: none; outline: none;
+  line-height: 1.5; max-height: 120px; min-height: 22px; height: 22px; overflow-y: auto;
+}
+#cb-input::placeholder { color: #9CA3AF; }
+#cb-send {
+  width: 34px; height: 34px; border-radius: 10px; background: var(--cb-blue-mid);
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background 0.15s, transform 0.12s; color: white;
+}
+#cb-send:hover { background: var(--cb-blue); }
+#cb-send:active { transform: scale(0.93); }
+#cb-send:disabled { background: #D1D5DB; cursor: not-allowed; transform: none; }
+
+/* Powered-by */
+.cb-powered { text-align: center; font-size: 10.5px; color: var(--cb-muted); margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 4px; }
+
+/* Error bubble */
+.cb-error-bubble { background: #FEF2F2; border: 0.5px solid #FECACA; color: #B91C1C; border-radius: 12px; padding: 10px 14px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+
+/* Welcome state */
+#cb-welcome { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 24px 20px; text-align: center; gap: 10px; }
+#cb-welcome .cb-welcome-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--cb-blue-light); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 4px; }
+#cb-welcome h3 { font-size: 15px; font-weight: 600; color: var(--cb-text); margin: 0; }
+#cb-welcome p { font-size: 13px; color: var(--cb-muted); line-height: 1.55; margin: 0; max-width: 260px; }
+.cb-welcome-chips { display: flex; flex-direction: column; gap: 7px; width: 100%; margin-top: 8px; }
+.cb-welcome-chip {
+  font-family: var(--cb-font); font-size: 12.5px; padding: 10px 14px; border-radius: 12px;
+  border: 1px solid rgba(0,87,168,0.18); background: var(--cb-surface); color: var(--cb-text);
+  cursor: pointer; text-align: left; transition: background 0.14s, border-color 0.14s;
+  line-height: 1.4; display: flex; align-items: center; gap: 8px; font-weight: 400;
+}
+.cb-welcome-chip:hover { background: var(--cb-blue-light); border-color: rgba(0,87,168,0.3); }
+.cb-welcome-chip:disabled { cursor: not-allowed; opacity: 0.55; }
+.cb-welcome-chip .wc-icon { font-size: 15px; flex-shrink: 0; }
+
+@media (max-width: 480px) {
+  :root { --cb-w: 100vw; --cb-h: 100dvh; }
+  #cb-panel { bottom: 0; right: 0; border-radius: 0; width: 100vw; height: 100dvh; max-height: 100dvh; }
+  #cb-fab { bottom: 20px; right: 20px; }
+}
+@media (min-width: 481px) and (max-width: 900px) {
+  :root { --cb-w: min(380px, 90vw); --cb-h: min(600px, 88vh); }
+  #cb-panel { right: 18px; bottom: 84px; }
+  #cb-fab { right: 18px; bottom: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #cb-fab, #cb-fab svg, #cb-panel, .cb-row, .cb-typing-row, .cb-dot, .cb-status-dot, .cb-chip, .cb-hbtn, #cb-send {
+    animation: none !important; transition: none !important;
+  }
+}
+  </style>
+</head>
+<body class="portal-shifted">
+
+  <!-- ══════════════════════════════════════════════════
+       TEST PANEL (left sidebar)
+  ══════════════════════════════════════════════════ -->
+  <div id="test-panel">
+
+    <div class="tp-section">
+      <div class="tp-section-title">📨 Inject message</div>
+
+      <button class="tp-btn" onclick="testMsg('user', 'How do I create my first story in SAC?')">
+        <span class="tp-label">User message</span>
+        <span class="tp-desc">Short question bubble</span>
+      </button>
+
+      <button class="tp-btn" onclick="testMsg('user', 'Explain geo enrichment and choropleth maps in SAC, and how RetailCo would use them for their five regional FMCG outlets')">
+        <span class="tp-label">User message (long)</span>
+        <span class="tp-desc">Multi-line wrapping test</span>
+      </button>
+
+      <button class="tp-btn" onclick="testAiSimple()">
+        <span class="tp-label">AI reply (plain text)</span>
+        <span class="tp-desc">No markdown, short answer</span>
+      </button>
+
+      <button class="tp-btn" onclick="testAiSections()">
+        <span class="tp-label">AI reply (section headings)</span>
+        <span class="tp-desc">## headings → cb-section-heading</span>
+      </button>
+
+      <button class="tp-btn" onclick="testAiBullets()">
+        <span class="tp-label">AI reply (bullets + bold)</span>
+        <span class="tp-desc">The exact geo enrichment response from your screenshot</span>
+      </button>
+
+      <button class="tp-btn" onclick="testAiCode()">
+        <span class="tp-label">AI reply (with code)</span>
+        <span class="tp-desc">Inline `code` formatting</span>
+      </button>
+
+      <button class="tp-btn" onclick="testAiCitations()">
+        <span class="tp-label">AI reply (with citations)</span>
+        <span class="tp-desc">Source pill chips below bubble</span>
+      </button>
+
+      <button class="tp-btn" onclick="testError()">
+        <span class="tp-label">Error bubble</span>
+        <span class="tp-desc">API unreachable state</span>
+      </button>
+    </div>
+
+    <div class="tp-section">
+      <div class="tp-section-title">⏱ Typing indicator</div>
+      <button class="tp-btn" onclick="testTyping()">
+        <span class="tp-label">Show typing...</span>
+        <span class="tp-desc">Show for delay ms, then auto-reply</span>
+      </button>
+      <button class="tp-btn" onclick="testFullFlow()">
+        <span class="tp-label">Full flow simulation</span>
+        <span class="tp-desc">User msg → typing → AI reply → chips</span>
+      </button>
+      <div class="tp-delay-row">
+        <label>Delay</label>
+        <input type="range" id="delay-slider" min="300" max="3000" value="1200" step="100" oninput="document.getElementById('delay-val').textContent=this.value+'ms'">
+        <span id="delay-val">1200ms</span>
+      </div>
+    </div>
+
+    <div class="tp-section">
+      <div class="tp-section-title">🧩 Widget state</div>
+      <div class="tp-mode-row">
+        <button class="tp-mode-btn active" id="btn-open" onclick="openPanel()">Open</button>
+        <button class="tp-mode-btn" id="btn-close" onclick="closePanel()">Close</button>
+        <button class="tp-mode-btn" id="btn-clear" onclick="clearChat()">Clear</button>
+      </div>
+      <div class="tp-mode-row" style="margin-top:6px">
+        <button class="tp-mode-btn" onclick="showContextPill('📍 Day 7 · Geo Maps')">Context pill ON</button>
+        <button class="tp-mode-btn" onclick="hideContextPill()">Pill OFF</button>
+      </div>
+      <div class="tp-mode-row" style="margin-top:6px">
+        <button class="tp-mode-btn" onclick="showBadge()">Badge ON</button>
+        <button class="tp-mode-btn" onclick="hideBadge()">Badge OFF</button>
+      </div>
+    </div>
+
+    <div class="tp-log">
+      <div class="tp-log-title">🪵 Event log</div>
+      <div id="tp-log-entries"></div>
+    </div>
+  </div>
+
+  <button id="test-panel-toggle" onclick="toggleTestPanel()" title="Toggle test panel">◀ Tests</button>
+
+  <!-- ══════════════════════════════════════════════════
+       PORTAL MOCK PAGE (background)
+  ══════════════════════════════════════════════════ -->
+  <header class="portal-header">
+    <div class="portal-brand-logo">SAC</div>
+    <div>
+      <div class="portal-brand-text">SAP Analytics Cloud</div>
+      <div class="portal-brand-sub">Learning Portal · Version 2 · ODE 2025–2026</div>
+    </div>
+  </header>
+
+  <div class="portal-hero">
+    <h2>Learn SAP Analytics Cloud from zero — story by story, with RetailCo</h2>
+    <p>14-day roadmap · RetailCo India case study · official SAP docs · AI prompts when stuck</p>
+  </div>
+
+  <div class="portal-main">
+    <div class="portal-card">
+      <h3>RetailCo India — your practice company</h3>
+      <p>Every lesson uses this same fictional FMCG company so concepts stick. You are <strong>Mona</strong>, the SAC analyst — meet the team, download the RetailCo CSV files from Reference, then use Start building to open Day 1.</p>
+    </div>
+    <div class="portal-card">
+      <h3>Day 7 · Geo Maps &amp; Choropleth</h3>
+      <p>In today's lesson you will geo-enrich the RetailCo regional sales model and create a choropleth map showing revenue by Indian state. You'll learn about Location Dimensions, region matching, and how to add a Choropleth layer to a Geo Map story widget.</p>
+    </div>
+    <div class="portal-card">
+      <h3>Day 8 · Planning &amp; Data Actions</h3>
+      <p>Forecast next quarter's beverage demand using SAC's built-in predictive forecasting. You'll configure a Data Action, set up driver-based planning, and distribute values across the regional hierarchy.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       CHATBOT WIDGET HTML
+  ══════════════════════════════════════════════════ -->
+  <div id="cb-root">
+    <button id="cb-fab" aria-label="Open SAC AI Tutor" aria-expanded="false" aria-controls="cb-panel">
+      <svg class="cb-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="8.5" cy="11" r="1" fill="white"/><circle cx="12" cy="11" r="1" fill="white"/><circle cx="15.5" cy="11" r="1" fill="white"/>
+      </svg>
+      <svg class="cb-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6 6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span id="cb-badge" aria-hidden="true"></span>
+    </button>
+
+    <div id="cb-panel" role="dialog" aria-label="SAC AI Tutor" aria-modal="true" hidden>
+      <div id="cb-header">
+        <div class="cb-avatar" aria-hidden="true">🎓</div>
+        <div class="cb-header-info">
+          <div class="cb-header-name">SAC AI Tutor</div>
+          <div class="cb-header-status">
+            <span class="cb-status-dot" aria-hidden="true"></span>
+            <span id="cb-status-text">Ask me anything about SAC</span>
+          </div>
+        </div>
+        <div class="cb-header-actions">
+          <button class="cb-hbtn" id="cb-clear-btn" title="Clear chat" aria-label="Clear chat" onclick="clearChat()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/>
+            </svg>
+          </button>
+          <button class="cb-hbtn" id="cb-close-btn" title="Close" aria-label="Close chat" onclick="closePanel()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="cb-context-pill" aria-live="polite"></div>
+
+      <div id="cb-messages" role="log" aria-label="Chat messages" aria-live="polite">
+        <div id="cb-welcome">
+          <div class="cb-welcome-icon" aria-hidden="true">🎓</div>
+          <h3>Your SAC tutor is ready</h3>
+          <p>Ask anything about SAP Analytics Cloud — stories, charts, models, geo maps, and more.</p>
+          <div class="cb-welcome-chips">
+            <button class="cb-welcome-chip" onclick="sendUI('How do I create my first story in SAC?')">
+              <span class="wc-icon" aria-hidden="true">📊</span>How do I create my first story in SAC?
+            </button>
+            <button class="cb-welcome-chip" onclick="sendUI('What is the difference between a story and an analytic application?')">
+              <span class="wc-icon" aria-hidden="true">🤔</span>Story vs analytic application — what's the difference?
+            </button>
+            <button class="cb-welcome-chip" onclick="sendUI('How does the RetailCo case study use planning features?')">
+              <span class="wc-icon" aria-hidden="true">🏪</span>How does RetailCo use SAC planning features?
+            </button>
+            <button class="cb-welcome-chip" onclick="sendUI('Explain geo enrichment and choropleth maps in SAC')">
+              <span class="wc-icon" aria-hidden="true">🗺️</span>Explain geo enrichment and choropleth maps
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="cb-suggestions" aria-label="Suggested follow-ups" style="display:none"></div>
+
+      <div id="cb-footer">
+        <div class="cb-input-wrap">
+          <textarea id="cb-input" placeholder="Ask about SAC stories, models, charts…" rows="1"
+            aria-label="Type your question" autocomplete="off" spellcheck="true"
+            oninput="autoResize(this); document.getElementById('cb-send').disabled = !this.value.trim()"
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendFromInput();}"></textarea>
+          <button id="cb-send" aria-label="Send message" disabled onclick="sendFromInput()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="cb-powered" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Powered by Azure AI · SAP documentation
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       TEST HARNESS JS
+  ══════════════════════════════════════════════════ -->
+  <script>
+  'use strict';
+
+  /* ── Helpers from chatbot.js (copied here for standalone testing) ── */
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function mdToHtml(text) {
+    const lines = String(text).split('\n');
+    let html = '';
+    let inList = false;
+
+    for (let i = 0; i < lines.length; i++) {
+      let line = lines[i]
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>');
+
+      const headingMatch = line.match(/^#{1,3} (.+)$/);
+      if (headingMatch) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += `<span class="cb-section-heading">${headingMatch[1]}</span>`;
+        continue;
+      }
+
+      const boldHeadingMatch = line.match(/^<strong>(.+?)<\/strong>:?\s*$/);
+      if (boldHeadingMatch) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += `<span class="cb-section-heading">${boldHeadingMatch[1]}</span>`;
+        continue;
+      }
+
+      const bulletMatch = line.match(/^[-*•] (.+)$/);
+      if (bulletMatch) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += `<li>${bulletMatch[1]}</li>`;
+        continue;
+      }
+
+      if (inList) { html += '</ul>'; inList = false; }
+      if (line.trim() === '') continue;
+      html += `<p>${line}</p>`;
+    }
+
+    if (inList) html += '</ul>';
+    return html;
+  }
+
+  function now() {
+    return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function scrollBottom() {
+    const m = document.getElementById('cb-messages');
+    if (m) m.scrollTop = m.scrollHeight;
+  }
+
+  function autoResize(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+  }
+
+  /* ── Log ── */
+  function log(msg, type = 'info') {
+    const el = document.getElementById('tp-log-entries');
+    const entry = document.createElement('div');
+    entry.className = `tp-log-entry ${type}`;
+    entry.innerHTML = `<span class="tp-log-time">${now()}</span>${msg}`;
+    el.prepend(entry);
+    // keep max 40 entries
+    while (el.children.length > 40) el.removeChild(el.lastChild);
+  }
+
+  /* ── Panel open/close ── */
+  function openPanel() {
+    const panel = document.getElementById('cb-panel');
+    panel.hidden = false;
+    panel.classList.add('open');
+    document.getElementById('cb-fab').classList.add('open');
+    document.getElementById('cb-fab').setAttribute('aria-expanded', 'true');
+    document.getElementById('cb-badge')?.classList.remove('show');
+    setTimeout(() => document.getElementById('cb-input')?.focus(), 50);
+    log('Panel opened', 'ok');
+  }
+
+  function closePanel() {
+    const panel = document.getElementById('cb-panel');
+    panel.classList.remove('open');
+    panel.hidden = true;
+    document.getElementById('cb-fab').classList.remove('open');
+    document.getElementById('cb-fab').setAttribute('aria-expanded', 'false');
+    log('Panel closed', 'info');
+  }
+
+  document.getElementById('cb-fab').addEventListener('click', () => {
+    const panel = document.getElementById('cb-panel');
+    panel.hidden ? openPanel() : closePanel();
+  });
+
+  /* ── Append message ── */
+  function appendMessage(role, text, citations) {
+    const messages = document.getElementById('cb-messages');
+    const welcome = document.getElementById('cb-welcome');
+    if (welcome) welcome.remove();
+
+    const row = document.createElement('div');
+    row.className = `cb-row ${role}`;
+
+    const avatarContent = role === 'user'
+      ? `<span aria-hidden="true">👤</span>`
+      : `<span aria-hidden="true">🎓</span>`;
+
+    let citationsHtml = '';
+    if (citations && citations.length) {
+      citationsHtml = `<div class="cb-citations" role="list" aria-label="Sources">
+        ${citations.map(c => `
+          <span class="cb-cite" role="listitem" title="${escapeHtml(c.title || '')}">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+              <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            ${escapeHtml(c.title || 'Source')}${c.page ? ` · p.${c.page}` : ''}
+          </span>`).join('')}
+      </div>`;
+    }
+
+    row.innerHTML = `
+      <div class="cb-msg-avatar" aria-hidden="true">${avatarContent}</div>
+      <div>
+        <div class="cb-bubble">${mdToHtml(text)}${citationsHtml}</div>
+        <div class="cb-ts">${now()}</div>
+      </div>`;
+
+    messages.appendChild(row);
+    scrollBottom();
+    return row;
+  }
+
+  /* ── Typing indicator ── */
+  function showTyping() {
+    const messages = document.getElementById('cb-messages');
+    const existing = document.getElementById('cb-typing');
+    if (existing) existing.remove();
+    const row = document.createElement('div');
+    row.className = 'cb-typing-row';
+    row.id = 'cb-typing';
+    row.innerHTML = `
+      <div class="cb-msg-avatar" aria-hidden="true"><span>🎓</span></div>
+      <div class="cb-typing-bubble" role="status" aria-label="AI is typing">
+        <span class="cb-dot"></span><span class="cb-dot"></span><span class="cb-dot"></span>
+      </div>`;
+    messages.appendChild(row);
+    scrollBottom();
+    log('Typing indicator shown', 'info');
+  }
+
+  function hideTyping() {
+    document.getElementById('cb-typing')?.remove();
+    log('Typing indicator hidden', 'info');
+  }
+
+  function showSuggestions() {
+    const el = document.getElementById('cb-suggestions');
+    if (!el) return;
+    el.style.display = 'flex';
+    el.innerHTML = FOLLOW_UPS.map(([icon, q]) =>
+      `<button class="cb-chip" onclick="sendUI('${q.replace(/'/g, "\\'")}')">${icon} ${q}</button>`
+    ).join('');
+    log('Suggestion chips shown', 'ok');
+  }
+
+  function hideSuggestions() {
+    const el = document.getElementById('cb-suggestions');
+    if (el) el.style.display = 'none';
+  }
+
+  /* ── Error bubble ── */
+  function appendError(msg = "Couldn't reach the AI service. Please try again in a moment.") {
+    const messages = document.getElementById('cb-messages');
+    const welcome = document.getElementById('cb-welcome');
+    if (welcome) welcome.remove();
+    const row = document.createElement('div');
+    row.className = 'cb-row ai';
+    row.innerHTML = `
+      <div class="cb-msg-avatar" aria-hidden="true"><span>🎓</span></div>
+      <div>
+        <div class="cb-error-bubble" role="alert">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          ${msg}
+        </div>
+        <div class="cb-ts">${now()}</div>
+      </div>`;
+    messages.appendChild(row);
+    scrollBottom();
+  }
+
+  /* ── Clear chat ── */
+  function clearChat() {
+    const messages = document.getElementById('cb-messages');
+    messages.innerHTML = '';
+    const welcome = document.createElement('div');
+    welcome.id = 'cb-welcome';
+    welcome.innerHTML = `
+      <div class="cb-welcome-icon" aria-hidden="true">🎓</div>
+      <h3>Your SAC tutor is ready</h3>
+      <p>Ask anything about SAP Analytics Cloud — stories, charts, models, geo maps, and more.</p>
+      <div class="cb-welcome-chips">
+        <button class="cb-welcome-chip" onclick="sendUI('How do I create my first story in SAC?')">
+          <span class="wc-icon" aria-hidden="true">📊</span>How do I create my first story in SAC?
+        </button>
+        <button class="cb-welcome-chip" onclick="sendUI('Explain geo enrichment and choropleth maps in SAC')">
+          <span class="wc-icon" aria-hidden="true">🗺️</span>Explain geo enrichment and choropleth maps
+        </button>
+      </div>`;
+    messages.appendChild(welcome);
+    hideSuggestions();
+    log('Chat cleared', 'warn');
+  }
+
+  /* ── Context pill ── */
+  function showContextPill(text) {
+    const pill = document.getElementById('cb-context-pill');
+    pill.textContent = text;
+    pill.classList.add('show');
+    log(`Context pill: "${text}"`, 'ok');
+  }
+  function hideContextPill() {
+    document.getElementById('cb-context-pill').classList.remove('show');
+    log('Context pill hidden', 'info');
+  }
+
+  /* ── Badge ── */
+  function showBadge() { document.getElementById('cb-badge').classList.add('show'); log('Badge shown', 'ok'); }
+  function hideBadge() { document.getElementById('cb-badge').classList.remove('show'); log('Badge hidden', 'info'); }
+
+  /* ── Send from actual input box ── */
+  function sendFromInput() {
+    const input = document.getElementById('cb-input');
+    const text = input.value.trim();
+    if (!text) return;
+    sendUI(text);
+    input.value = '';
+    input.style.height = '22px';
+    document.getElementById('cb-send').disabled = true;
+  }
+
+  /* ── sendUI: user msg + simulated delay + dummy AI reply ── */
+  function sendUI(text) {
+    if (!text) return;
+    openPanel();
+    appendMessage('user', text);
+    hideSuggestions();
+    log(`User: "${text.substring(0, 50)}${text.length > 50 ? '…' : ''}"`, 'info');
+
+    const delay = parseInt(document.getElementById('delay-slider').value, 10);
+    showTyping();
+
+    setTimeout(() => {
+      hideTyping();
+      const reply = getDummyReply(text);
+      appendMessage('ai', reply.text, reply.citations);
+      showSuggestions();
+      log('AI reply injected', 'ok');
+    }, delay);
+  }
+
+  /* ── Dummy reply bank ── */
+  function getDummyReply(question) {
+    const q = question.toLowerCase();
+
+    if (q.includes('geo') || q.includes('choropleth') || q.includes('map')) {
+      return {
+        text: `## Geo enrichment\n- In SAC you can geo-enrich your data by using Location Dimensions: specify location either by region or by coordinates so your dataset can be used in geo maps.\n- Geo enrichment creates a geo-enriched model that enables geospatial analysis and lets you add location-based layers and geographic features (for example points of interest).\n\n## Choropleth maps in SAC\n- A Choropleth layer is one of the layer types you can add to a Geo Map.\n- Geo Maps let you add layers that show location-based data and geographic features in a geo-enriched model; available layer types include Bubble, Point of Interest, Heat Map, Choropleth, Feature, and Flow.\n- To use a choropleth layer your data must be geo-enriched (by region or coordinates) so the regional areas can be shown on the Geo Map.`,
+        citations: [
+          { title: 'SAP Help · Geo Maps', page: '12' },
+          { title: 'SAP Help · Location Dimension' }
+        ]
+      };
+    }
+
+    if (q.includes('story') && q.includes('application')) {
+      return {
+        text: `## Stories\n- A Story is a presentation-style document for exploring and visualising data using charts, tables, and geo maps.\n- Ideal for reporting and data exploration.\n\n## Analytic Applications\n- An Analytic Application is a more interactive, scripted experience built with the Application Designer.\n- You can add custom logic using \`Script APIs\` and build guided analytics workflows.\n- Best for complex, guided user interactions rather than self-service exploration.`,
+        citations: [{ title: 'SAP Help · Analytic Applications' }]
+      };
+    }
+
+    if (q.includes('story') || q.includes('create') || q.includes('first')) {
+      return {
+        text: `## Creating your first story\n- Go to **Create → Story** from the SAC home screen.\n- Choose **Responsive** page type for best cross-device support.\n- Click **Add Data** and select your model or upload a CSV file.\n- Use the **Insert** panel to add charts, tables, or input controls to your canvas.\n\nYou can start with a simple **Bar/Column chart** — it's the most common starting point for FMCG sales data like RetailCo's.`,
+        citations: [{ title: 'SAP Help · Stories', page: '3' }]
+      };
+    }
+
+    if (q.includes('planning') || q.includes('retailco')) {
+      return {
+        text: `## RetailCo planning setup\n- RetailCo uses a **Planning model** with version management to separate actuals from budget.\n- **Data Actions** automate calculations like spreading regional targets or computing variance.\n- The **Predictive Forecast** feature is used to project next-quarter beverage demand based on historical sales.\n\nIn Day 9 of the learning path you'll build this step by step using the RetailCo CSV files from the Reference section.`,
+        citations: [{ title: 'SAP Help · Planning', page: '7' }, { title: 'RetailCo Case Study' }]
+      };
+    }
+
+    if (q.includes('code') || q.includes('api') || q.includes('script')) {
+      return {
+        text: `You can reference model members using the \`MemberSet\` function and filter data with \`RESTRICT\`.\n\nA common pattern in Data Actions is:\n- Use \`FOREACH\` to loop over a dimension\n- Apply \`RESULTLOOKUP\` to pull actuals\n- Write the result back using \`DATA()\`\n\nAll script runs inside the \`ApplicationDesigner\` context so you have access to the full \`sap.fpa.ui.scriptApi\`.`,
+        citations: [{ title: 'SAP Help · Script API Reference' }]
+      };
+    }
+
+    // default fallback
+    return {
+      text: `That's a great question about SAP Analytics Cloud!\n\nHere's what I can tell you based on the SAP documentation:\n- SAC is a cloud-based business intelligence and planning platform.\n- It combines analytics, planning, and predictive capabilities in one tool.\n- The **Optimized Design Experience (ODE)** introduced in 2025 brings a refreshed navigation with a side panel layout.\n\nTry navigating to **Learn → Day 1** in the portal to start with the basics, or ask me something more specific about stories, models, or planning.`,
+      citations: []
+    };
+  }
+
+  /* ── Test panel button helpers ── */
+  function testMsg(role, text) {
+    openPanel();
+    appendMessage(role, text);
+    log(`${role} bubble injected`, 'ok');
+  }
+
+  function testAiSimple() {
+    openPanel();
+    appendMessage('ai', 'SAP Analytics Cloud is a cloud-based BI and planning platform that combines analytics, planning, and predictive capabilities. The 2025 ODE update introduced a new side-panel navigation layout.');
+    log('AI simple reply injected', 'ok');
+  }
+
+  function testAiSections() {
+    openPanel();
+    appendMessage('ai', `## Geo enrichment\n- Specify location using Location Dimensions (by region or coordinates).\n- Creates a geo-enriched model for geospatial analysis.\n\n## Choropleth maps\n- A Choropleth layer shades regions based on a measure value.\n- Available as one of six layer types in a Geo Map widget.\n- Data must be geo-enriched first.`);
+    log('AI section heading reply injected', 'ok');
+  }
+
+  function testAiBullets() {
+    openPanel();
+    // Exact response shape from the screenshots — this is what was breaking
+    appendMessage('ai', `**Geo enrichment**\n- In SAC you can geo-enrich your data by using Location Dimensions: specify location either by region or by coordinates so your dataset can be used in geo maps.\n- Geo enrichment creates a geo-enriched model that enables geospatial analysis and lets you add location-based layers and geographic features (for example points of interest).\n\n**Choropleth maps in SAC**\n- A Choropleth layer is one of the layer types you can add to a Geo Map.\n- Geo Maps let you add layers that show location-based data and geographic features in a geo-enriched model; available layer types include Bubble, Point of Interest, Heat Map, Choropleth, Feature, and Flow.\n- To use a choropleth layer your data must be geo-enriched (by region or coordinates) so the regional areas can be shown on the Geo Map.`);
+    showSuggestions();
+    log('AI bullets+bold reply injected (screenshot scenario)', 'ok');
+  }
+
+  function testAiCode() {
+    openPanel();
+    appendMessage('ai', `You can filter model data using \`RESTRICT\` combined with a \`MemberSet\`.\n\nIn a Data Action script:\n- Reference dimensions with \`[d/RegionKey]\`\n- Write back computed values using the \`DATA()\` function\n- Use \`FOREACH\` to iterate across members\n\nScript APIs are available in the **Application Designer** under the \`sap.fpa.ui\` namespace.`);
+    log('AI code reply injected', 'ok');
+  }
+
+  function testAiCitations() {
+    openPanel();
+    appendMessage('ai',
+      `## Geo Maps in SAC\n- Add a Geo Map widget to your story canvas.\n- Configure a Location Dimension on your model first.\n- Then add Choropleth, Bubble, or Heat Map layers.\n\nFor RetailCo, map the **Region** dimension to Indian state boundaries.`,
+      [
+        { title: 'SAP Help · Geo Maps', page: '12' },
+        { title: 'SAP Help · Location Dimension' },
+        { title: 'RetailCo Case Study' }
+      ]
+    );
+    showSuggestions();
+    log('AI reply with 3 citations injected', 'ok');
+  }
+
+  function testError() {
+    openPanel();
+    const welcome = document.getElementById('cb-welcome');
+    if (welcome) welcome.remove();
+    appendError("Couldn't reach the AI service. Please try again in a moment.");
+    log('Error bubble injected', 'error');
+  }
+
+  function testTyping() {
+    openPanel();
+    const delay = parseInt(document.getElementById('delay-slider').value, 10);
+    showTyping();
+    setTimeout(() => {
+      hideTyping();
+      appendMessage('ai', `Here's a quick answer after a ${delay}ms delay — this is how the real flow will feel.`);
+      showSuggestions();
+      log(`Full typing flow done (${delay}ms delay)`, 'ok');
+    }, delay);
+  }
+
+  function testFullFlow() {
+    openPanel();
+    const delay = parseInt(document.getElementById('delay-slider').value, 10);
+    appendMessage('user', 'Explain geo enrichment and choropleth maps in SAC');
+    hideSuggestions();
+    log('User message injected', 'info');
+    showTyping();
+    setTimeout(() => {
+      hideTyping();
+      appendMessage('ai',
+        `## Geo enrichment\n- In SAC you can geo-enrich your data by using Location Dimensions: specify location either by region or by coordinates so your dataset can be used in geo maps.\n- Geo enrichment creates a geo-enriched model that enables geospatial analysis and lets you add location-based layers and geographic features.\n\n## Choropleth maps in SAC\n- A Choropleth layer is one of the layer types you can add to a Geo Map.\n- Geo Maps let you add layers that show location-based data and geographic features in a geo-enriched model; available layer types include Bubble, Point of Interest, Heat Map, Choropleth, Feature, and Flow.\n- To use a choropleth layer your data must be geo-enriched (by region or coordinates).`,
+        [{ title: 'SAP Help · Geo Maps', page: '12' }, { title: 'SAP Help · Location Dimension' }]
+      );
+      showSuggestions();
+      log('Full flow complete', 'ok');
+    }, delay);
+  }
+
+  /* ── Test panel toggle ── */
+  function toggleTestPanel() {
+    const panel = document.getElementById('test-panel');
+    const btn   = document.getElementById('test-panel-toggle');
+    const body  = document.body;
+    const collapsed = panel.classList.toggle('collapsed');
+    body.classList.toggle('portal-shifted', !collapsed);
+    btn.textContent = collapsed ? '▶ Tests' : '◀ Tests';
+  }
+
+  /* ── Auto-open panel and show context pill on load ── */
+  window.addEventListener('DOMContentLoaded', () => {
+    openPanel();
+    showContextPill('📍 Day 7 · Geo Maps');
+    log('Test harness ready', 'ok');
+    log('Panel auto-opened with context pill', 'info');
+  });
+  </script>
+</body>
+</html>

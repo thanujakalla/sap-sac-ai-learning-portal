@@ -1,0 +1,16 @@
+{
+  "sales_row_count": 23760,
+  "total_revenue": 3460386895,
+  "total_revenue_fmt": "\u20b9346.04 Cr",
+  "south_total": 824037674,
+  "south_total_fmt": "\u20b982.40 Cr",
+  "spot_chennai_april_beverages": 311392,
+  "spot_fmt": "\u20b93.1 L",
+  "unique_skus": 15,
+  "unique_cities": 33,
+  "planning_rows": 5040,
+  "hr_rows": 300,
+  "product_master_rows": 15,
+  "distributor_master_rows": 396,
+  "sales_columns": 31
+}

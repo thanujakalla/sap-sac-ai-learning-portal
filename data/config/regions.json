@@ -1,0 +1,44 @@
+{
+  "regions": {
+    "North": {
+      "weight": 1.0,
+      "states": {
+        "Delhi": [{"city": "New Delhi", "latitude": 28.6139, "longitude": 77.2090}, {"city": "Noida", "latitude": 28.5355, "longitude": 77.3910}, {"city": "Gurugram", "latitude": 28.4595, "longitude": 77.0266}],
+        "Punjab": [{"city": "Ludhiana", "latitude": 30.9010, "longitude": 75.8573}, {"city": "Amritsar", "latitude": 31.6340, "longitude": 74.8723}],
+        "Haryana": [{"city": "Faridabad", "latitude": 28.4089, "longitude": 77.3178}, {"city": "Panipat", "latitude": 29.3909, "longitude": 76.9635}]
+      }
+    },
+    "South": {
+      "weight": 1.14,
+      "states": {
+        "Tamil Nadu": [{"city": "Chennai", "latitude": 13.0827, "longitude": 80.2707}, {"city": "Coimbatore", "latitude": 11.0168, "longitude": 76.9558}, {"city": "Madurai", "latitude": 9.9252, "longitude": 78.1198}],
+        "Karnataka": [{"city": "Bengaluru", "latitude": 12.9716, "longitude": 77.5946}, {"city": "Mysuru", "latitude": 12.2958, "longitude": 76.6394}],
+        "Kerala": [{"city": "Kochi", "latitude": 9.9312, "longitude": 76.2673}, {"city": "Thiruvananthapuram", "latitude": 8.5241, "longitude": 76.9366}]
+      }
+    },
+    "East": {
+      "weight": 0.93,
+      "states": {
+        "West Bengal": [{"city": "Kolkata", "latitude": 22.5726, "longitude": 88.3639}, {"city": "Siliguri", "latitude": 26.7271, "longitude": 88.3953}],
+        "Odisha": [{"city": "Bhubaneswar", "latitude": 20.2961, "longitude": 85.8245}, {"city": "Cuttack", "latitude": 20.4625, "longitude": 85.8828}],
+        "Bihar": [{"city": "Patna", "latitude": 25.5941, "longitude": 85.1376}, {"city": "Gaya", "latitude": 24.7955, "longitude": 85.0002}]
+      }
+    },
+    "West": {
+      "weight": 1.06,
+      "states": {
+        "Maharashtra": [{"city": "Mumbai", "latitude": 19.0760, "longitude": 72.8777}, {"city": "Pune", "latitude": 18.5204, "longitude": 73.8567}, {"city": "Nagpur", "latitude": 21.1458, "longitude": 79.0882}],
+        "Gujarat": [{"city": "Ahmedabad", "latitude": 23.0225, "longitude": 72.5714}, {"city": "Surat", "latitude": 21.1702, "longitude": 72.8311}],
+        "Goa": [{"city": "Panaji", "latitude": 15.4909, "longitude": 73.8278}, {"city": "Margao", "latitude": 15.2832, "longitude": 73.9582}]
+      }
+    },
+    "Central": {
+      "weight": 0.89,
+      "states": {
+        "Madhya Pradesh": [{"city": "Bhopal", "latitude": 23.2599, "longitude": 77.4126}, {"city": "Indore", "latitude": 22.7196, "longitude": 75.8577}],
+        "Chhattisgarh": [{"city": "Raipur", "latitude": 21.2514, "longitude": 81.6296}, {"city": "Bilaspur", "latitude": 22.0797, "longitude": 82.1391}],
+        "Rajasthan": [{"city": "Jaipur", "latitude": 26.9124, "longitude": 75.7873}, {"city": "Jodhpur", "latitude": 26.2389, "longitude": 73.0243}]
+      }
+    }
+  }
+}

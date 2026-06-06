@@ -1,0 +1,35 @@
+{
+  "characters": {
+    "you": "Mona — SAC Analyst and learner (that's you)",
+    "ceo": "Chinnu — RetailCo CEO",
+    "finance": "Nandan — Head of Finance",
+    "south": "Menon — South Regional Sales Manager"
+  },
+  "expanded": [
+    {
+      "name": "Chinnu",
+      "role": "CEO",
+      "description": "Wants one dashboard every Monday — no more Excel chaos.",
+      "character_id": "ceo"
+    },
+    {
+      "name": "Mona",
+      "role": "SAC Analyst",
+      "description": "Building RetailCo's analytics and planning stack — that's you learning SAC.",
+      "character_id": "you",
+      "is_you": true
+    },
+    {
+      "name": "Nandan",
+      "role": "Head of Finance",
+      "description": "Owns budgets, forecasts, and month-end close.",
+      "character_id": "finance"
+    },
+    {
+      "name": "Menon",
+      "role": "South Regional Sales Manager",
+      "description": "Needs product drilldown for his territory.",
+      "character_id": "south"
+    }
+  ]
+}

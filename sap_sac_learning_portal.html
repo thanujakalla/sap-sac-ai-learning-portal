@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SAP Analytics Cloud Learning Portal — complete roadmap for Power BI developers transitioning to SAC.">
+  <title>SAP Analytics Cloud | Power BI Developer Transition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/sac-portal.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="SAP SAC Learning Portal home">
+        <div class="brand-logo" aria-hidden="true">SAC</div>
+        <div class="brand-text">
+          <h1>SAP Analytics Cloud</h1>
+          <span id="brandSub">Learning Portal · Power BI Developer Transition</span>
+        </div>
+      </a>
+      <span class="header-badge">14-Day Roadmap · Beginner → Advanced</span>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-grid">
+        <div>
+          <h2 id="heroTitle">Your complete path from Power BI to SAP Analytics Cloud</h2>
+          <p id="heroDesc">Structured 14-day transition plan with teacher-style lessons, daily checklists, verified SAP documentation links, the RetailCo India case study, planning scenarios, and certification prep.</p>
+          <div class="hero-tags">
+            <span class="hero-tag">BI &amp; Stories</span>
+            <span class="hero-tag">Financial Planning</span>
+            <span class="hero-tag">Smart Predict</span>
+            <span class="hero-tag">Datasphere Live</span>
+            <span class="hero-tag">BW / HANA / S/4</span>
+            <span class="hero-tag">C_SAC_2415 Cert</span>
+          </div>
+          <p style="margin-top:12px;font-size:12px;opacity:0.9">Also available: <a href="sap_sac_beginner_portal.html" style="color:#fff;text-decoration:underline">Absolute Beginner track</a> (no Power BI required)</p>
+        </div>
+        <aside class="hero-card" aria-label="Your learning progress">
+          <div class="hero-card-title">Today's progress</div>
+          <div class="hero-progress-num" id="heroProgressNum">0%</div>
+          <div class="hero-progress-label" id="heroProgressDetail">0 days · 0 tasks completed</div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="heroProgressBar" style="width:0%"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-container">
+
+    <section aria-label="Learning metrics">
+      <div class="metrics-strip">
+        <div class="mcard"><div class="mval" id="mDone">0</div><div class="mlbl">Days completed</div></div>
+        <div class="mcard"><div class="mval" id="mPct">0%</div><div class="mlbl">Overall progress</div></div>
+        <div class="mcard"><div class="mval">14</div><div class="mlbl">Total days</div></div>
+        <div class="mcard"><div class="mval" id="mTasks">0/0</div><div class="mlbl">Tasks done</div></div>
+        <div class="mcard"><div class="mval">5</div><div class="mlbl">Phases</div></div>
+      </div>
+      <div style="margin-bottom:1.5rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:12px;color:var(--color-text-secondary)">Roadmap progress</span>
+          <span style="font-size:12px;font-weight:600;color:var(--color-text-primary)" id="progLabel">0 / 14 days</span>
+        </div>
+        <div class="progress-bar-wrap" style="background:var(--color-background-secondary);height:8px">
+          <div class="progress-bar-fill" id="mainProgress" style="width:0%;background:linear-gradient(90deg,var(--sap-blue),var(--sap-teal))"></div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="nav-bar" aria-label="Portal sections">
+      <button class="nav-btn active" data-view="plan" type="button">📅 Learning Plan</button>
+      <button class="nav-btn" data-view="case" type="button">🏪 Case Study</button>
+      <button class="nav-btn" data-view="subs" type="button">💳 Subscriptions</button>
+      <button class="nav-btn" data-view="resources" type="button">📚 Resource Library</button>
+      <button class="nav-btn" data-view="compare" type="button">⚖ Power BI vs SAC</button>
+      <button class="nav-btn" data-view="performance" type="button">⚡ Performance</button>
+      <button class="nav-btn" data-view="notes" type="button">📝 My Notes</button>
+    </nav>
+
+    <section class="view active" id="view-plan" aria-labelledby="plan-heading">
+      <h2 id="plan-heading" class="sr-only">14-Day Learning Plan</h2>
+      <div class="phase-legend" id="phaseLegend"></div>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">
+        Each day has seven tabs: <strong>Learn</strong> (teacher-style lessons) → <strong>Video</strong> (embedded YouTube) → <strong>Visual</strong> → <strong>Resources</strong> → <strong>Tasks</strong> (checkboxes) → <strong>Notes</strong> → <strong>Case</strong>. Mark the circle when you finish a day.
+      </p>
+      <div class="day-list" id="dayList"></div>
+    </section>
+
+    <section class="view" id="view-case" aria-labelledby="case-heading">
+      <h2 id="case-heading" style="font-size:18px;font-weight:600;margin-bottom:1rem">RetailCo India — End-to-End Business Case</h2>
+      <div id="caseStudyContent"></div>
+    </section>
+
+    <section class="view" id="view-subs" aria-labelledby="subs-heading">
+      <h2 id="subs-heading" style="font-size:18px;font-weight:600;margin-bottom:0.5rem">Subscriptions &amp; Tools You Need</h2>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">All links verified. Start free — spend only when necessary.</p>
+      <div style="overflow-x:auto">
+        <table class="sub-table">
+          <thead>
+            <tr>
+              <th style="width:24%">Tool / Platform</th>
+              <th style="width:36%">Purpose</th>
+              <th style="width:14%">Cost</th>
+              <th style="width:26%">Action</th>
+            </tr>
+          </thead>
+          <tbody id="subsBody"></tbody>
+        </table>
+      </div>
+      <div class="case-block" style="margin-top:1.25rem">
+        <p><strong>Day 1 starter pack (zero cost):</strong> SAC 30-day Trial + SAP Learning free account + SAP Help Portal bookmark. That covers Phases 1–4 completely free.</p>
+      </div>
+      <h3 style="font-size:15px;font-weight:600;margin:1.5rem 0 1rem">Featured learning videos</h3>
+      <div class="video-grid" id="featuredVideos"></div>
+    </section>
+
+    <section class="view" id="view-resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading" style="font-size:18px;font-weight:600;margin-bottom:0.5rem">Resource Library</h2>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1.25rem">Verified official SAP links only. Use Help Portal search inside each page for specific topics.</p>
+      <div id="resourceLibrary"></div>
+    </section>
+
+    <section class="view" id="view-compare" aria-labelledby="compare-heading">
+      <h2 id="compare-heading" style="font-size:18px;font-weight:600;margin-bottom:0.5rem">Power BI → SAC Concept Mapping</h2>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">Use this table to translate your existing Power BI knowledge during learning.</p>
+      <div style="overflow-x:auto">
+        <table class="sub-table">
+          <thead><tr><th>Concept</th><th>Power BI</th><th>SAP Analytics Cloud</th></tr></thead>
+          <tbody id="compareBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="view" id="view-performance" aria-labelledby="perf-heading">
+      <h2 id="perf-heading" style="font-size:18px;font-weight:600;margin-bottom:0.5rem">Performance Optimization Guide</h2>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1.25rem">10 essential rules for building fast SAC stories.</p>
+      <div class="card-grid" id="perfGuide"></div>
+    </section>
+
+    <section class="view" id="view-notes" aria-labelledby="notes-heading">
+      <h2 id="notes-heading" style="font-size:18px;font-weight:600;margin-bottom:0.5rem">My Learning Notes</h2>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">Global notebook plus per-day notes inside each day's Notes tab. Saved in your browser.</p>
+      <textarea class="notes-area" id="globalNotes" style="min-height:200px"></textarea>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
+        <button class="save-note-btn" id="saveGlobalNotes" type="button">💾 Save all notes</button>
+        <span class="note-saved" id="globalNotesSaved">✓ Saved to browser</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>SAP Analytics Cloud Learning Portal · Power BI Developer Transition Track</p>
+    <p style="margin-top:4px">Resources verified May 2026 · <a href="https://help.sap.com/docs/SAP_ANALYTICS_CLOUD" target="_blank" rel="noopener noreferrer" style="color:var(--color-text-info)">help.sap.com</a></p>
+  </footer>
+
+  <script src="js/sac-links.js"></script>
+  <script src="js/data-pbi.js"></script>
+  <script src="js/sac-portal.js"></script>
+</body>
+</html>

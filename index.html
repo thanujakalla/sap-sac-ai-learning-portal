@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SAP Analytics Cloud Learning Portal — beginner-friendly story lessons with RetailCo case study">
+  <title>SAP Analytics Cloud Learning Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/sac-portal.css?v=20260607">
+  <style>
+    /* ── Landing page overrides ── */
+    .landing-hero {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+    .landing-hero h2 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .landing-hero p {
+      font-size: 15px;
+      opacity: 0.92;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .feat-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+    }
+    .feat-pill {
+      font-size: 11px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.12);
+      border: 0.5px solid rgba(255,255,255,0.22);
+      color: #fff;
+    }
+
+    /* ── Primary CTA ── */
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: #fff;
+      color: var(--sap-blue, #0070f3);
+      text-decoration: none;
+      border-radius: var(--border-radius-md, 8px);
+      font-weight: 700;
+      font-size: 15px;
+      transition: opacity 0.15s;
+    }
+    .cta-primary:hover { opacity: 0.9; }
+
+    /* ── Track grid ── */
+    .track-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3.5rem;
+    }
+    .track-section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .track-card {
+      background: var(--color-background-primary);
+      border: 0.5px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-lg, 12px);
+      padding: 1.375rem 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.14s, border-color 0.14s;
+      display: block;
+    }
+    .track-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--sap-blue, #0070f3);
+    }
+    .track-card.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .track-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .track-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .track-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: var(--color-text-primary);
+    }
+    .track-card p {
+      font-size: 12.5px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+    .track-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .track-tag {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      background: var(--color-background-info);
+      color: var(--color-text-info);
+      font-weight: 600;
+    }
+    .track-tag.green {
+      background: #e6f4ea;
+      color: #1D9E75;
+    }
+    .track-tag.muted {
+      background: var(--color-background-secondary);
+      color: var(--color-text-secondary);
+    }
+
+    /* ── Active track accent ── */
+    .track-card.active-track {
+      border-color: var(--sap-blue, #0070f3);
+      box-shadow: 0 0 0 1px rgba(0,112,243,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">SAC</div>
+        <div class="brand-text">
+          <h1>SAP Analytics Cloud</h1>
+          <span>Learning Portal</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero landing-hero">
+    <div class="hero-inner">
+      <h2>Learn SAP Analytics Cloud — story by story</h2>
+      <p>A 14-day beginner roadmap with RetailCo India case-study lessons, official SAP docs, daily checklists, and AI prompts when you get stuck.</p>
+      <div class="feat-pills">
+        <span class="feat-pill">Story lessons</span>
+        <span class="feat-pill">Ask AI prompts</span>
+        <span class="feat-pill">Daily checklists</span>
+        <span class="feat-pill">Notes (saved locally)</span>
+        <span class="feat-pill">RetailCo case study</span>
+        <span class="feat-pill">Official SAP docs</span>
+        <span class="feat-pill">Free SAC trial guide</span>
+      </div>
+      <a class="cta-primary" href="sap_sac_beginner_portal_unified.html">
+        Start learning →
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Learning tracks ── -->
+  <section class="track-section" aria-label="Available learning tracks">
+    <p class="track-section-label">Available tracks</p>
+    <div class="track-grid">
+
+      <!-- Beginner track → unified portal -->
+      <a class="track-card active-track" href="sap_sac_beginner_portal_unified.html">
+        <div class="track-card-header">
+          <span class="track-icon" aria-hidden="true">🌱</span>
+          <div>
+            <h3>Absolute Beginner</h3>
+          </div>
+        </div>
+        <p>14-day roadmap using the RetailCo India case study. Days 1–10 are ready now; Days 11–14 are clearly marked while content is completed.</p>
+        <div class="track-tags">
+          <span class="track-tag">Active</span>
+          <span class="track-tag green">V2 — ODE 2025–2026</span>
+          <span class="track-tag">10 days ready</span>
+        </div>
+      </a>
+
+      <!-- Power BI transition — coming soon -->
+      <div class="track-card disabled" aria-disabled="true">
+        <div class="track-card-header">
+          <span class="track-icon" aria-hidden="true">⚡</span>
+          <div>
+            <h3>Power BI Developer Transition</h3>
+          </div>
+        </div>
+        <p>Concept mapping, DAX ↔ SAC formulas, and C_SAC_2415 certification prep — built for developers already comfortable with Power BI.</p>
+        <div class="track-tags">
+          <span class="track-tag muted">Coming soon</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Progress and notes save in your browser · Works on GitHub Pages · No server required</p>
+    <p style="margin-top: 4px">
+      <a href="https://help.sap.com/docs/SAP_ANALYTICS_CLOUD" target="_blank" rel="noopener noreferrer" style="color: var(--color-text-info)">SAP Help Portal</a>
+      ·
+      <a href="https://www.sap.com/products/technology-platform/cloud-analytics/trial.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-text-info)">SAC Free Trial</a>
+    </p>
+  </footer>
+
+</body>
+</html>

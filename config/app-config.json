@@ -1,0 +1,26 @@
+{
+  "environment": "static",
+  "apiBaseUrl": "",
+  "staticBaseUrl": "",
+  "endpoints": {
+    "featureFlags": "data/config/feature-flags.json",
+    "storyScenes": "data/content/story-scenes.json",
+    "glossary": "data/content/glossary-by-day.json",
+    "characters": "data/content/characters.json"
+  },
+  "chatbot": {
+    "enabled": true,
+    "apiUrl": "https://sapsap-func-hydqe6gqdtgqfvfp.centralindia-01.azurewebsites.net/api/chat"
+  },
+  "azureFunctions": {
+    "plannedApiBaseUrl": "/api",
+    "plannedEndpoints": {
+      "health": "/health",
+      "content": "/content",
+      "featureFlags": "/feature-flags",
+      "progress": "/progress",
+      "aiTutor": "/chat",
+      "retailcoData": "/retailco-data"
+    }
+  }
+}

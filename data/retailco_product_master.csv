@@ -1,0 +1,16 @@
+Product_SKU,Brand,Product_Category,Pack_Size,Unit_of_Measure,Launch_Year,Is_Active,MSRP_INR,Category_Manager
+BEV-AF-1L,AquaFresh,Beverages,1L,Case,2021,Yes,61,Priya
+BEV-SW-500ML,SipWell,Beverages,500ML,Case,2023,Yes,70,Priya
+BEV-CU-2L,ChillUp,Beverages,2L,Case,2023,Yes,61,Priya
+BEV-FR-750ML,FizzRoot,Beverages,750ML,Case,2023,Yes,70,Priya
+BEV-PM-1L,PureMist,Beverages,1L,Case,2023,Yes,61,Priya
+SNK-CB-200G,CrunchyBite,Snacks,200G,Unit,2021,Yes,67,Rahul
+SNK-MM-150G,MasalaMix,Snacks,150G,Unit,2023,Yes,67,Rahul
+SNK-NP-100G,NutPop,Snacks,100G,Unit,2023,Yes,67,Rahul
+SNK-SR-250G,SpiceRack,Snacks,250G,Unit,2023,Yes,67,Rahul
+SNK-CA-180G,ChipsAhoy,Snacks,180G,Unit,2023,Yes,67,Rahul
+PC-GC-SOAP,GlowCare,Personal Care,SOAP,Unit,2021,Yes,67,Anita
+PC-PS-SAN,PureShield,Personal Care,SAN,Unit,2023,Yes,64,Anita
+PC-FW-SHAMPOO,FreshWave,Personal Care,SHAMPOO,Unit,2023,Yes,76,Anita
+PC-ST-LOTION,SilkTouch,Personal Care,LOTION,Case,2023,Yes,73,Anita
+PC-CP-WASH,CleanPro,Personal Care,WASH,Unit,2023,Yes,67,Anita

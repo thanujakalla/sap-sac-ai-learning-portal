@@ -1,0 +1,21 @@
+{
+  "version": "2.1.0",
+  "lastUpdated": "2026-06-06",
+  "description": "Feature flags for unified SAP SAC Learning Portal",
+  "features": {
+    "v2_ui_enabled": true,
+    "enhanced_navigation": true,
+    "geo_enrichment_guide": true,
+    "advanced_analytics": false,
+    "ai_assistant_beta": true,
+    "dark_mode": false,
+    "accessibility_enhanced": true
+  },
+  "rollout": {
+    "v2_percentage": 100,
+    "ai_percentage": 100,
+    "beta_features_percentage": 0
+  },
+  "debug": false,
+  "logging_enabled": true
+}

@@ -1,0 +1,120 @@
+{
+  "glossary": {
+    "1": [
+      { "term": "ERP", "meaning": "Software that records daily business transactions — orders, payments, inventory." },
+      { "term": "S/4HANA", "meaning": "SAP's modern ERP system where RetailCo's official sales transactions live." },
+      { "term": "Datasphere", "meaning": "Cloud warehouse that cleans and organises data before reporting." },
+      { "term": "SAC", "meaning": "SAP Analytics Cloud — where charts, budgets, and forecasts are built." },
+      { "term": "BTP", "meaning": "SAP's cloud platform hosting SAC and other services." }
+    ],
+    "2": [
+      { "term": "Tenant", "meaning": "Your isolated SAC environment on SAP BTP — unique URL, users, and objects." },
+      { "term": "SAP ID", "meaning": "Universal login for sap.com, trial signup, and SAC authentication." },
+      { "term": "Story", "meaning": "Presentation layer — charts and KPIs bound to a model." },
+      { "term": "Model", "meaning": "Semantic data layer — dimensions, measures, calculations." },
+      { "term": "Live connection", "meaning": "Runtime query to source — metadata only stored in SAC." },
+      { "term": "Import (Acquire)", "meaning": "Data copied into SAC HANA — fast reads, scheduled refresh." },
+      { "term": "Optimized Story", "meaning": "Modern story runtime — always use for new dashboards." }
+    ],
+    "3": [
+      { "term": "Analytic Model", "meaning": "Import or live model for read-only BI dashboards and Smart Predict." },
+      { "term": "Planning Model", "meaning": "Write-back model with Version dimension — Nandan uses this on Day 7." },
+      { "term": "Dimension", "meaning": "Category axis — Region, Product, Month (labels, not summed)." },
+      { "term": "Measure", "meaning": "Numeric field aggregated by SUM — Revenue, Units, Target." },
+      { "term": "Data Wrangler", "meaning": "Transform tool during import — fix dates, split columns, drop blanks." },
+      { "term": "Column mapping", "meaning": "Assign each CSV column to a dimension or measure at import." },
+      { "term": "Public dimension", "meaning": "Shared master data (e.g. Region) reusable across multiple models." }
+    ],
+    "4": [
+      { "term": "Calculated measure", "meaning": "Model-level formula — e.g. Revenue ÷ Target × 100 for % vs Target." },
+      { "term": "Restricted measure", "meaning": "Measure with a fixed dimension filter — e.g. Beverages revenue only." },
+      { "term": "YTD", "meaning": "Year-to-date — cumulative sum from fiscal year start to current period." },
+      { "term": "Fiscal year", "meaning": "RetailCo starts April — Q1 is Apr–Jun, not Jan–Mar." },
+      { "term": "Geo enrichment", "meaning": "Maps dimension members (South, West) to geographic coordinates." },
+      { "term": "Choropleth map", "meaning": "Map shaded by measure value — darker = higher revenue." },
+      { "term": "DAC", "meaning": "Data Access Control — filters rows by user on a dimension (e.g. Region)." }
+    ],
+    "5": [
+      { "term": "Optimized Story", "meaning": "Modern dashboard — Canvas or Responsive pages bound to a model." },
+      { "term": "Builder panel", "meaning": "Right panel — chart type, Rows, Columns, Measures assignment." },
+      { "term": "KPI tile", "meaning": "Single big number widget — often with variance vs target or prior period." },
+      { "term": "Input control", "meaning": "Page-level dropdown/slider — filters all widgets on the page." },
+      { "term": "Canvas page", "meaning": "Fixed desktop grid — Chinnu's executive layout." },
+      { "term": "Threshold", "meaning": "Conditional colour rules on KPIs — green/amber/red by % vs Target." },
+      { "term": "Theme", "meaning": "Story-wide fonts, colours, and chart styles — apply once, consistent everywhere." }
+    ],
+    "6": [
+      { "term": "Linked analysis", "meaning": "Click a chart → other widgets filter to that selection automatically." },
+      { "term": "Drilldown", "meaning": "Navigate hierarchy — Year → Quarter → Month, or Category → SKU." },
+      { "term": "Rank filter", "meaning": "Show top N only — e.g. top 5 products by Revenue on Page 2." },
+      { "term": "Smart Insights", "meaning": "SAC explains anomalies in plain language on a chart." },
+      { "term": "Search to Insight", "meaning": "Type a question in natural language — SAC builds an answer chart." },
+      { "term": "Story filter", "meaning": "Cross-page filter passed from Page 1 selection to Page 2." },
+      { "term": "Export PDF", "meaning": "Board-ready snapshot of story pages — no SAC login required to view." }
+    ],
+    "7": [
+      { "term": "Planning Model", "meaning": "Write-back model with Version dimension — Nandan's budget home." },
+      { "term": "Write-back", "meaning": "Planner types a number in SAC and saves it to the model." },
+      { "term": "Version", "meaning": "Parallel data slice — Actual, Forecast, Budget." },
+      { "term": "Account dimension", "meaning": "P&L rows — Gross Sales (INC), COGS (EXP), etc." },
+      { "term": "Data entry table", "meaning": "Excel-like grid in a story — editable for planners." },
+      { "term": "Public vs private version", "meaning": "Private = working copy; public = published for all planners." },
+      { "term": "Planner role", "meaning": "Security role allowing edit on Budget version cells." }
+    ],
+    "8": [
+      { "term": "Data Action", "meaning": "On-demand planning script — Copy, Allocate, Formula steps." },
+      { "term": "Copy step", "meaning": "Clone values version-to-version or period-to-period." },
+      { "term": "Allocation", "meaning": "Spread a lump sum using a driver measure (e.g. Gross Sales)." },
+      { "term": "Distribution", "meaning": "Split by fixed % you define — 40/35/25." },
+      { "term": "Driver dimension", "meaning": "Basis for allocation — Product Category or Region." },
+      { "term": "Trigger button", "meaning": "Story widget that runs a Data Action in one click." },
+      { "term": "Advanced Formula step", "meaning": "Script inside a Data Action — headcount loop, growth %." }
+    ],
+    "9": [
+      { "term": "Advanced Formula", "meaning": "Planning script — LOOKUP, RESULTLOOKUP, IF in Data Actions." },
+      { "term": "RESULTLOOKUP", "meaning": "Read value from another cell context (e.g. prior month)." },
+      { "term": "LOOKUP", "meaning": "Read same slice across time (e.g. same month last year)." },
+      { "term": "Multi Action", "meaning": "Chained job — Data Actions, locks, publish, notify." },
+      { "term": "Data lock", "meaning": "Open / Restricted / Locked — edit control on versions." },
+      { "term": "Planning Calendar", "meaning": "Schedule Multi Actions on date/time." },
+      { "term": "Job Monitor", "meaning": "Execution log — success, failure, error details." }
+    ],
+    "10": [
+      { "term": "Smart Predict", "meaning": "Built-in ML in SAC — no external Python tools." },
+      { "term": "Time series", "meaning": "Forecast future months from historical trend." },
+      { "term": "Classification", "meaning": "Yes/no prediction — e.g. distributor churn." },
+      { "term": "Regression", "meaning": "Predict a specific numeric outcome." },
+      { "term": "Confidence band", "meaning": "Range showing forecast uncertainty (e.g. ₹78–92L)." },
+      { "term": "Forecast accuracy", "meaning": "(1 − |Actual − Forecast| / Actual) × 100." },
+      { "term": "Predictive Forecast", "meaning": "ML output written into planning Forecast version." }
+    ],
+    "11": [
+      { "term": "Presentation mode", "meaning": "Fullscreen story for executive meetings." },
+      { "term": "Data Analyzer", "meaning": "Excel-like exploration without building a story." },
+      { "term": "Analytics Catalog", "meaning": "App store where users find approved dashboards." },
+      { "term": "C_SAC", "meaning": "SAP certification exam for Analytics Cloud skills." },
+      { "term": "Portfolio", "meaning": "Screenshots + case study proving what you built." }
+    ],
+    "12": [
+      { "term": "Live model", "meaning": "SAC reads source at runtime — metadata only stored." },
+      { "term": "Cloud Connector", "meaning": "Secure tunnel for on-premise SAP systems." },
+      { "term": "Business Data Cloud", "meaning": "SAP's unified vision — Datasphere + SAC + partners." },
+      { "term": "Hybrid architecture", "meaning": "Mix of live and import connections by purpose." },
+      { "term": "Analytic dataset", "meaning": "Prepared data object in Datasphere for SAC." }
+    ],
+    "13": [
+      { "term": "BW/4HANA", "meaning": "Classic SAP data warehouse — still common in enterprises." },
+      { "term": "CDS View", "meaning": "Pre-built analytical view in S/4HANA." },
+      { "term": "Calculation View", "meaning": "Advanced data model built in SAP HANA." },
+      { "term": "Acquire", "meaning": "Import connection — data copied into SAC." },
+      { "term": "Delta load", "meaning": "Import only changed rows — faster refresh." }
+    ],
+    "14": [
+      { "term": "Weightage", "meaning": "Performance score per widget — find slow charts." },
+      { "term": "Activity auth", "meaning": "Can user create stories or only view?" },
+      { "term": "Object auth", "meaning": "Can user open this specific story?" },
+      { "term": "Transport", "meaning": "Move content from dev → test → production tenant." },
+      { "term": "Go-live checklist", "meaning": "Final verification before 200 users log in." }
+    ]
+  }
+}

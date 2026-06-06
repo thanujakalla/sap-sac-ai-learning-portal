@@ -1,0 +1,397 @@
+Distributor_ID,Distributor_Name,Region,State,City,Primary_Channel,Credit_Terms_Days,Active
+DIST-NO-0001,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0002,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0003,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0004,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0005,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0006,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0007,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0008,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0009,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0010,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0011,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0012,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0013,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0014,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0015,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0016,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0017,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0018,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0019,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0020,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0021,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0022,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0023,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0024,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0025,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0026,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0027,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0028,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0029,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0030,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0031,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0032,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0033,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0034,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0035,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0036,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0037,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0038,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0039,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0040,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0041,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0042,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0043,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0044,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0045,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0046,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0047,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0048,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0049,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0050,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0051,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0052,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0053,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0054,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0055,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0056,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0057,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0058,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0059,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0060,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0061,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0062,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0063,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0064,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0065,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0066,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0067,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0068,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0069,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0070,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0071,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0072,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0073,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0074,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0075,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0076,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0077,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0078,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0079,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0080,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0081,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0082,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0083,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0084,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0085,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0086,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0087,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0088,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0089,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0090,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0091,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0092,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0093,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0094,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0095,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0096,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0097,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0098,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0099,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0100,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0101,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0102,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0103,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0104,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0105,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0106,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0107,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0108,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0109,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0110,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0111,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0112,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0113,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0114,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0115,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0116,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0117,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0118,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0119,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0120,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0121,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0122,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0123,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0124,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0125,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0126,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0127,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0128,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0129,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0130,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0131,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0132,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0133,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0134,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0135,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0136,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0137,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0138,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0139,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0140,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0141,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0142,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0143,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0144,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0145,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0146,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0147,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0148,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0149,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0150,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0151,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0152,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0153,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0154,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0155,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0156,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0157,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0158,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0159,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0160,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0161,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0162,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0163,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0164,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0165,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0166,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0167,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0168,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0169,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0170,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0171,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0172,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0173,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0174,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0175,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0176,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0177,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0178,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0179,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0180,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0181,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0182,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0183,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0184,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0185,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0186,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0187,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0188,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0189,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0190,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0191,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0192,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0193,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0194,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0195,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0196,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0197,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0198,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0199,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0200,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0201,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0202,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0203,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0204,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0205,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0206,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0207,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0208,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0209,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0210,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0211,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0212,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0213,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0214,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0215,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0216,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0217,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0218,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0219,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0220,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0221,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0222,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0223,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0224,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0225,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0226,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0227,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0228,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0229,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0230,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0231,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0232,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0233,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0234,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0235,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0236,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0237,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0238,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0239,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0240,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0241,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0242,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0243,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0244,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0245,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0246,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0247,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0248,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0249,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0250,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0251,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0252,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0253,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0254,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0255,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0256,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0257,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0258,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0259,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0260,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0261,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0262,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0263,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0264,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0265,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0266,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0267,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0268,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0269,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0270,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0271,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0272,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0273,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0274,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0275,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0276,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0277,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0278,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0279,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0280,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0281,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0282,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0283,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0284,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0285,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0286,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0287,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0288,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0289,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0290,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0291,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0292,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0293,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0294,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0295,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0296,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0297,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0298,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0299,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0300,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0301,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0302,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0303,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0304,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0305,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0306,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0307,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0308,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0309,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0310,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0311,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0312,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0313,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0314,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0315,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0316,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0317,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0318,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0319,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0320,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0321,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0322,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0323,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0324,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0325,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0326,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0327,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0328,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0329,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0330,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0331,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0332,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0333,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0334,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0335,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0336,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0337,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0338,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0339,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0340,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0341,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0342,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0343,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0344,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0345,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0346,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0347,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0348,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0349,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0350,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0351,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0352,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0353,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0354,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0355,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0356,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0357,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0358,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0359,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0360,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0361,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0362,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0363,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes
+DIST-NO-0364,New Delhi FMCG Distributors Pvt Ltd,North,Delhi,New Delhi,Modern Trade,30,Yes
+DIST-NO-0365,Noida FMCG Distributors Pvt Ltd,North,Delhi,Noida,Modern Trade,30,Yes
+DIST-NO-0366,Gurugram FMCG Distributors Pvt Ltd,North,Delhi,Gurugram,Modern Trade,30,Yes
+DIST-NO-0367,Ludhiana FMCG Distributors Pvt Ltd,North,Punjab,Ludhiana,Modern Trade,30,Yes
+DIST-NO-0368,Amritsar FMCG Distributors Pvt Ltd,North,Punjab,Amritsar,Modern Trade,30,Yes
+DIST-NO-0369,Faridabad FMCG Distributors Pvt Ltd,North,Haryana,Faridabad,Modern Trade,30,Yes
+DIST-NO-0370,Panipat FMCG Distributors Pvt Ltd,North,Haryana,Panipat,Modern Trade,30,Yes
+DIST-SO-0371,Chennai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Chennai,Modern Trade,30,Yes
+DIST-SO-0372,Coimbatore FMCG Distributors Pvt Ltd,South,Tamil Nadu,Coimbatore,Modern Trade,30,Yes
+DIST-SO-0373,Madurai FMCG Distributors Pvt Ltd,South,Tamil Nadu,Madurai,Modern Trade,30,Yes
+DIST-SO-0374,Bengaluru FMCG Distributors Pvt Ltd,South,Karnataka,Bengaluru,Modern Trade,30,Yes
+DIST-SO-0375,Mysuru FMCG Distributors Pvt Ltd,South,Karnataka,Mysuru,Modern Trade,30,Yes
+DIST-SO-0376,Kochi FMCG Distributors Pvt Ltd,South,Kerala,Kochi,Modern Trade,30,Yes
+DIST-SO-0377,Thiruvananthapuram FMCG Distributors Pvt Ltd,South,Kerala,Thiruvananthapuram,Modern Trade,30,Yes
+DIST-EA-0378,Kolkata FMCG Distributors Pvt Ltd,East,West Bengal,Kolkata,Modern Trade,30,Yes
+DIST-EA-0379,Siliguri FMCG Distributors Pvt Ltd,East,West Bengal,Siliguri,Modern Trade,30,Yes
+DIST-EA-0380,Bhubaneswar FMCG Distributors Pvt Ltd,East,Odisha,Bhubaneswar,Modern Trade,30,Yes
+DIST-EA-0381,Cuttack FMCG Distributors Pvt Ltd,East,Odisha,Cuttack,Modern Trade,30,Yes
+DIST-EA-0382,Patna FMCG Distributors Pvt Ltd,East,Bihar,Patna,Modern Trade,30,Yes
+DIST-EA-0383,Gaya FMCG Distributors Pvt Ltd,East,Bihar,Gaya,Modern Trade,30,Yes
+DIST-WE-0384,Mumbai FMCG Distributors Pvt Ltd,West,Maharashtra,Mumbai,Modern Trade,30,Yes
+DIST-WE-0385,Pune FMCG Distributors Pvt Ltd,West,Maharashtra,Pune,Modern Trade,30,Yes
+DIST-WE-0386,Nagpur FMCG Distributors Pvt Ltd,West,Maharashtra,Nagpur,Modern Trade,30,Yes
+DIST-WE-0387,Ahmedabad FMCG Distributors Pvt Ltd,West,Gujarat,Ahmedabad,Modern Trade,30,Yes
+DIST-WE-0388,Surat FMCG Distributors Pvt Ltd,West,Gujarat,Surat,Modern Trade,30,Yes
+DIST-WE-0389,Panaji FMCG Distributors Pvt Ltd,West,Goa,Panaji,Modern Trade,30,Yes
+DIST-WE-0390,Margao FMCG Distributors Pvt Ltd,West,Goa,Margao,Modern Trade,30,Yes
+DIST-CE-0391,Bhopal FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Bhopal,Modern Trade,30,Yes
+DIST-CE-0392,Indore FMCG Distributors Pvt Ltd,Central,Madhya Pradesh,Indore,Modern Trade,30,Yes
+DIST-CE-0393,Raipur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Raipur,Modern Trade,30,Yes
+DIST-CE-0394,Bilaspur FMCG Distributors Pvt Ltd,Central,Chhattisgarh,Bilaspur,Modern Trade,30,Yes
+DIST-CE-0395,Jaipur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jaipur,Modern Trade,30,Yes
+DIST-CE-0396,Jodhpur FMCG Distributors Pvt Ltd,Central,Rajasthan,Jodhpur,Modern Trade,30,Yes

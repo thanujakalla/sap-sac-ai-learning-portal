@@ -1,0 +1,251 @@
+/* SAP SAC Learning Portal — Layout & Structure */
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.brand-text h1 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.brand-text span {
+  display: block;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.header-progress {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.header-link {
+  font-size: 13px;
+  color: var(--sap-blue);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header-sac-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--sap-blue), var(--sap-teal));
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Main Container */
+.main-container {
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border-tertiary);
+}
+
+.nav-btn {
+  padding: 1rem 1.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-default);
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-btn.active {
+  color: var(--sap-blue);
+  border-bottom-color: var(--sap-blue);
+}
+
+/* Views */
+.view {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--sap-blue) 0%, var(--sap-teal) 100%);
+  color: white;
+  padding: 3rem 1.5rem;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 2rem;
+}
+
+.hero-inner {
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+}
+
+.hero-compact {
+  background: linear-gradient(135deg, var(--sap-blue) 0%, var(--sap-purple) 100%);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-compact-inner {
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-compact-main {
+  flex: 1;
+}
+
+.hero-compact-main h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-compact-desc {
+  font-size: 14px;
+  opacity: 0.95;
+  margin-bottom: 1rem;
+}
+
+.hero-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar-wrap {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  transition: width 0.5s ease-out;
+}
+
+.hero-progress-meta {
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+  background: var(--color-background-secondary);
+  border-top: 1px solid var(--color-border-tertiary);
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.site-footer p {
+  margin: 0.5rem 0;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-compact-inner {
+    flex-direction: column;
+  }
+
+  .header-inner {
+    padding: 0 1rem;
+  }
+
+  .main-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .header-actions {
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    padding: 0.75rem 1rem;
+    font-size: 13px;
+  }
+}

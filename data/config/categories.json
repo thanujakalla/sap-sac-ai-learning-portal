@@ -1,0 +1,38 @@
+{
+  "categories": {
+    "Beverages": {
+      "base": 185000,
+      "cogs_pct": 0.41,
+      "brands": [
+        {"name": "AquaFresh", "sku": "BEV-AF-1L", "pack_size": "1L"},
+        {"name": "SipWell", "sku": "BEV-SW-500ML", "pack_size": "500ML"},
+        {"name": "ChillUp", "sku": "BEV-CU-2L", "pack_size": "2L"},
+        {"name": "FizzRoot", "sku": "BEV-FR-750ML", "pack_size": "750ML"},
+        {"name": "PureMist", "sku": "BEV-PM-1L", "pack_size": "1L"}
+      ]
+    },
+    "Snacks": {
+      "base": 125000,
+      "cogs_pct": 0.37,
+      "brands": [
+        {"name": "CrunchyBite", "sku": "SNK-CB-200G", "pack_size": "200G"},
+        {"name": "MasalaMix", "sku": "SNK-MM-150G", "pack_size": "150G"},
+        {"name": "NutPop", "sku": "SNK-NP-100G", "pack_size": "100G"},
+        {"name": "SpiceRack", "sku": "SNK-SR-250G", "pack_size": "250G"},
+        {"name": "ChipsAhoy", "sku": "SNK-CA-180G", "pack_size": "180G"}
+      ]
+    },
+    "Personal Care": {
+      "base": 95000,
+      "cogs_pct": 0.44,
+      "brands": [
+        {"name": "GlowCare", "sku": "PC-GC-SOAP", "pack_size": "SOAP"},
+        {"name": "PureShield", "sku": "PC-PS-SAN", "pack_size": "SAN"},
+        {"name": "FreshWave", "sku": "PC-FW-SHAMPOO", "pack_size": "SHAMPOO"},
+        {"name": "SilkTouch", "sku": "PC-ST-LOTION", "pack_size": "LOTION"},
+        {"name": "CleanPro", "sku": "PC-CP-WASH", "pack_size": "WASH"}
+      ]
+    }
+  },
+  "brand_weights": [1.18, 1.05, 1.0, 0.92, 0.78]
+}

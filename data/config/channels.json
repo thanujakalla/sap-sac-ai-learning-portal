@@ -1,0 +1,24 @@
+{
+  "channels": {
+    "Modern Trade": {
+      "weight": 1.14,
+      "segment": "Premium",
+      "discount_pct": 0.012
+    },
+    "General Trade": {
+      "weight": 1.0,
+      "segment": "Mass",
+      "discount_pct": 0.018
+    },
+    "E-Commerce": {
+      "weight": 1.06,
+      "segment": "Premium",
+      "discount_pct": 0.035
+    },
+    "Quick Commerce": {
+      "weight": 0.92,
+      "segment": "Value",
+      "discount_pct": 0.028
+    }
+  }
+}

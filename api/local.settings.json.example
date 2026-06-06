@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "ALLOWED_ORIGINS": "http://localhost:8765,http://localhost:8770,https://thanujakalla.github.io",
+    "AZURE_SEARCH_ENDPOINT": "",
+    "AZURE_SEARCH_KEY": "",
+    "AZURE_SEARCH_INDEX": "sap-rag-index",
+    "AZURE_OPENAI_ENDPOINT": "",
+    "AZURE_OPENAI_KEY": "",
+    "AZURE_OPENAI_DEPLOYMENT": "gpt-5-mini"
+  }
+}
